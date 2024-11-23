@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "name": "watermelon",
+    "age": 5,
+    "species": "cat",
+    "special": false,
+    "vaccination": true,
+    "sterilisation": true
+  },
+  {
+    "id": 2,
+    "name": "catermelon",
+    "age": 8,
+    "species": "cat",
+    "special": true,
+    "vaccination": true,
+    "sterilisation": true
+  },
+  {
+    "id": 3,
+    "name": "ragnar",
+    "age": 3,
+    "species": "dog",
+    "special": false,
+    "vaccination": true,
+    "sterilisation": true
+  },
+  {
+    "id": 4,
+    "name": "doggo",
+    "age": 37,
+    "species": "dog",
+    "special": false,
+    "vaccination": true,
+    "sterilisation": true
+  },
+  {
+    "id": 5,
+    "name": "watermelon",
+    "age": 5,
+    "species": "cat",
+    "special": false,
+    "vaccination": true,
+    "sterilisation": true
+  },
+  {
+    "id": 6,
+    "name": "catermelon",
+    "age": 8,
+    "species": "cat",
+    "special": true,
+    "vaccination": true,
+    "sterilisation": true
+  },
+  {
+    "id": 7,
+    "name": "ragnar",
+    "age": 3,
+    "species": "dog",
+    "special": false,
+    "vaccination": true,
+    "sterilisation": true
+  },
+  {
+    "id": 8,
+    "name": "doggo",
+    "age": 37,
+    "species": "dog",
+    "special": false,
+    "vaccination": true,
+    "sterilisation": true
+  }
+]
