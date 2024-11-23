@@ -8,14 +8,18 @@ import DetailsPage from "./Pages/DetailsPage";
 import NotFoundPage from "./Pages/NotFoundPage";
 
 
-function App {
-<Routes>
+function App() {
+
+return (
+  <Routes>
   <Route path='/Homepage' element={<HomePage/>}/>
   <Route path='/details/:cardId' element={<DetailsPage/>}/>
   <Route path='/about' element={<AboutPage />} />
   <Route path='*' element={<NotFoundPage />}/>
 </Routes>
-return {
+)
+  
+}
 
-}
-}
+export default App
+
