@@ -10,7 +10,7 @@ import NotFoundPage from "./Pages/NotFoundPage";
 function App() {
   return (
     <Routes>
-      <Route path="/Homepage" element={<HomePage />} />
+      <Route path="/" element={<HomePage />} />
       <Route path="/details/:cardId" element={<DetailsPage />} />
       <Route path="/about" element={<AboutPage />} />
       <Route path="*" element={<NotFoundPage />} />
