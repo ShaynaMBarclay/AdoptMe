@@ -1,5 +1,12 @@
 import "./App.css";
-import {Routes, Route} from "react-router-dom";
+import dataAnimals from "./assets/data.json";
+import {useState} from "react";
+import { Routes, Route } from "react-router-dom";
+import AboutPage from "./Pages/AboutPage";
+import HomePage from "./Pages/HomePage";
+import DetailsPage from "./Pages/DetailsPage";
+import NotFoundPage from "./Pages/NotFoundPage";
+
 
 function App() {
 
@@ -15,4 +22,3 @@ return (
 }
 
 export default App
-
