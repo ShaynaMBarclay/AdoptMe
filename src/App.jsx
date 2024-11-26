@@ -6,6 +6,7 @@ import AboutPage from "./Pages/AboutPage";
 import HomePage from "./Pages/HomePage";
 import DetailsPage from "./Pages/DetailsPage";
 import NotFoundPage from "./Pages/NotFoundPage";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Route path="/details/:cardId" element={<DetailsPage />} />
       <Route path="/about" element={<AboutPage />} />
       <Route path="*" element={<NotFoundPage />} />
+      <Footer />
     </Routes>
   );
 }
