@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export const NotFound = () => {
+export const NotFoundPage = () => {
   return (
     <div>
       NotFound

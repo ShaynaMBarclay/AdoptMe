@@ -4,13 +4,13 @@ import { Routes, Route } from "react-router-dom";
 import AboutPage from "./pages/AboutPage";
 import HomePage from "./pages/HomePage";
 import DetailsPage from "./pages/DetailsPage";
-import NotFoundPage from "./pages/NotFoundPage";
+import { NotFoundPage } from "./pages/NotFoundPage";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 
 function App() {
   return (
-    <div>
+    <main>
       <Navbar className="navbar" />
       <Routes>
         <Route path="/" element={<HomePage animals={dataAnimals} />} />
@@ -19,7 +19,7 @@ function App() {
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <Footer />
-    </div>
+    </main>
   );
 }
 
