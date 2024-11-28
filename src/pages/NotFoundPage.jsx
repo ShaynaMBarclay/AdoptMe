@@ -1,5 +1,14 @@
-const NotFoundPage = () => {
-    return <div> Page Not Found</div>;
-};
+import { Link } from "react-router-dom";
 
-export default NotFoundPage;
+export const NotFound = () => {
+  return (
+    <div>
+      NotFound
+      <div className="notFound">
+        <img src="./page-not-found.PNG" alt="notFound" />
+        <Link to="/">HomePage</Link>
+      </div>
+      ;
+    </div>
+  );
+};
