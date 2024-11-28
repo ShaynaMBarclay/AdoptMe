@@ -13,7 +13,7 @@ const Navbar = () => {
       </div>
       
       <div className="navbar-links">
-        <Link to="/details/:cardId" className="navbar-link">Detail</Link>
+        <Link to="/about" className="navbar-link">About</Link>
         <Link to="/" className="navbar-link">Home</Link>
       </div>
     </nav>
