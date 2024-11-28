@@ -32,7 +32,7 @@ function DetailsPage() {
   return (
     <div>
       {/* Display the animal's name */}
-      <h1>About {animal.name}</h1>
+      <h1>{animal.name}</h1>
 
       {/* Display the animal's image with a fixed width */}
       <img src={animal.image} alt={animal.name} style={{ width: '300px', height: 'auto' }} />
