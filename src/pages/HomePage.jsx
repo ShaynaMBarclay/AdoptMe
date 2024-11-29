@@ -1,10 +1,7 @@
 // Comments added by Shayna to explain her work and what each piece of code does
 
-// Importing the React library for building the user interface
-import React from 'react';
-
 // Importing the Card component to display individual animal details
-import Card from '../components/Card';
+import Card from "../components/Card";
 
 // Defining the HomePage functional component and accepting 'animals' as a prop
 const HomePage = ({ animals }) => {

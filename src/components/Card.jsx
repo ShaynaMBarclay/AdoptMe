@@ -1,9 +1,7 @@
 // Comments added by Shayna to explain her work and what each piece of code does
 
-// Importing React for building the component
-import React from 'react';
 // Importing the useNavigate hook from React Router for programmatic navigation
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 // Defining the Card functional component and accepting 'animal' as a prop
 const Card = ({ animal }) => {
@@ -14,14 +12,14 @@ const Card = ({ animal }) => {
   const handleClick = () => {
     // Navigate to the 'details' page, passing the 'animal' object as state
     // ':cardId' is a placeholder in the URL structure, which can be used later for dynamic routing
-    navigate('/details/:cardId', { state: { animal } });
+    navigate("/details/:cardId", { state: { animal } });
   };
 
   return (
     <div
       className="card" // Assigning a CSS class for styling
       onClick={handleClick} // Adding a click event listener to the card
-      style={{ cursor: 'pointer' }} // Changing the cursor to indicate clickability
+      style={{ cursor: "pointer" }} // Changing the cursor to indicate clickability
     >
       {/* Display the animal's image */}
       <img src={animal.image} alt={animal.name} />
