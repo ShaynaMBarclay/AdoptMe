@@ -2,7 +2,6 @@
 
 // Importing the useNavigate hook from React Router for programmatic navigation
 import { useNavigate } from "react-router-dom";
-
 // Defining the Card functional component and accepting 'animal' as a prop
 const Card = ({ animal }) => {
   // Initializing the navigate function for programmatic routing
@@ -11,8 +10,8 @@ const Card = ({ animal }) => {
   // Function to handle the card click event
   const handleClick = () => {
     // Navigate to the 'details' page, passing the 'animal' object as state
-    // ':cardId' is a placeholder in the URL structure, which can be used later for dynamic routing
-    navigate("/details/:cardId", { state: { animal } });
+    // 'animal.id' is a placeholder in the URL structure
+    navigate(`/details/${animal.id}`, { state: { animal } });
   };
 
   return (
@@ -21,20 +20,16 @@ const Card = ({ animal }) => {
       onClick={handleClick} // Adding a click event listener to the card
       style={{ cursor: "pointer" }} // Changing the cursor to indicate clickability
     >
-      {/* Display the animal's image */}
-      <img src={animal.image} alt={animal.name} />
-
-      {/* Display the animal's name */}
+      {animal.images && animal.images.length > 0 && (
+        <img
+          src={animal.images[0]}
+          alt={`Photo of ${animal.name}`}
+          className="card-img"
+        />
+      )}
       <h3>{animal.name}</h3>
-
-      {/* Display the animal's species */}
       <p>Species: {animal.species}</p>
-
-      {/* Display the animal's age */}
       <p>Age: {animal.age}</p>
-
-      {/* Display the animal's description */}
-      <p>{animal.description}</p>
     </div>
   );
 };

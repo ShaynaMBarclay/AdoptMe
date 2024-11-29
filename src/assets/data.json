@@ -8,7 +8,11 @@
     "vaccination": true,
     "sterilisation": true,
     "description": "Three colors for happiness – Symona. She is really amazing – our Symona! If there were a contest for 'twist-and-turn', Symona would definitely be the winner – she is a very cheerful kitty! But sometimes the little girl feels sad too because her past isn't a happy one. She herself is a sweetheart. Tricolored – they say it's for bringing happiness to a home. And she's also a joy because she's cheerful, talkative, and energetic. It's impossible to photograph her because she's constantly in motion. You won't regret it if you take her!",
-    "images": ["./simona1.jpg", "./simona2.jpg", "./simona3.jpg"]
+    "images": [
+      "src/assets/simona1.jpg",
+      "src/assets/simona2.jpg",
+      "src/assets/simona3.jpg"
+    ]
   },
   {
     "id": 2,
@@ -19,7 +23,7 @@
     "vaccination": true,
     "sterilisation": true,
     "description": "This is Hrin the cat. 7 years of temporary homes. It so happened that he is theoretically left without a guardian. He lived in temporary housing, and not just one, but no one was taking care of finding him a permanent home. So he lived like an invisible being, as if he was there, but at the same time not. Hrin holds his head slightly to the side. A long time ago, he was treated for ear problems, but this trait has remained with him. What's the situation now - it's unknown. It needs to be checked. Hrin is like a shadow - he quietly sits always in one place and stares at one spot. I really want a kind and sincere person to notice this cat. He has already suffered enough, and the conditions he lived in were not always good. He has never known what human care and love are. Please pay attention to Hrin.",
-    "images": ["./hrin.jpg"]
+    "images": ["src/assets/hrin.jpg"]
   },
   {
     "id": 3,
@@ -30,7 +34,11 @@
     "vaccination": false,
     "sterilisation": false,
     "description": "A kitten was found in the middle of a field next to a watermelon stand.",
-    "images": ["./kavunchyk1.jpg", "./kavunchyk2.jpg", "./kavunchyk3.jpg"]
+    "images": [
+      "src/assets/kavunchyk1.jpg",
+      "src/assets/kavunchyk2.jpg",
+      "src/assets/kavunchyk3.jpg"
+    ]
   },
   {
     "id": 4,
@@ -41,7 +49,7 @@
     "vaccination": true,
     "sterilisation": true,
     "description": "5 kg of happiness. She is beautiful, calm, and sad. Graceful, with a nice fluffy and gray coat, green-eyed. Sad, because she lives in a shelter in a separate and constantly closed room. Sandra cannot live with her fellow cats. She is proud and must be the only one in the family. With people, she is very affectionate and sociable. An adult, balanced cat who won't cause mess, noise, or torn curtains in your house. There will be peace, and in it, the quiet soothing purr of your fluffy friend. We are looking to give her to responsible adults who can take care of the animal. Feed her good food, treat her if necessary, and most importantly, take her with you if you have to move.",
-    "images": ["./sandra1.jpg", "./sandra2.jpg"]
+    "images": ["src/assets/sandra1.jpg", "src/assets/sandra2.jpg"]
   },
   {
     "id": 5,
@@ -52,7 +60,10 @@
     "vaccination": true,
     "sterilisation": false,
     "description": "Patrick and Maryika are two more kittens out of four that were abandoned on the grounds of a monastery. The first two have already gone to homes from the clinic. These two also have ringworm, and it's such that it cannot be treated at the shelter, so I have to keep them in the clinic. The kittens have received their first vaccination.",
-    "images": ["./patrickmaryika1.jpg", "./patrickmaryika2.jpg"]
+    "images": [
+      "src/assets/patrickmaryika1.jpg",
+      "src/assets/patrickmaryika2.jpg"
+    ]
   },
   {
     "id": 6,
@@ -63,7 +74,10 @@
     "vaccination": true,
     "sterilisation": false,
     "description": "Patrick and Maryika are two more kittens out of four that were abandoned on the grounds of a monastery. The first two have already gone to homes from the clinic. These two also have ringworm, and it's such that it cannot be treated at the shelter, so I have to keep them in the clinic. The kittens have received their first vaccination.",
-    "images": ["./patrickmaryika1.jpg", "./patrickmaryika2.jpg"]
+    "images": [
+      "src/assets/patrickmaryika1.jpg",
+      "src/assets/patrickmaryika2.jpg"
+    ]
   },
   {
     "id": 7,
@@ -74,7 +88,10 @@
     "vaccination": true,
     "sterilisation": false,
     "description": "Patrick and Maryika are two more kittens out of four that were abandoned on the grounds of a monastery. The first two have already gone to homes from the clinic. These two also have ringworm, and it's such that it cannot be treated at the shelter, so I have to keep them in the clinic. The kittens have received their first vaccination.",
-    "images": ["./patrickmaryika1.jpg", "./patrickmaryika2.jpg"]
+    "images": [
+      "src/assets/patrickmaryika1.jpg",
+      "src/assets/patrickmaryika2.jpg"
+    ]
   },
   {
     "id": 8,
@@ -85,6 +102,9 @@
     "vaccination": true,
     "sterilisation": false,
     "description": "Patrick and Maryika are two more kittens out of four that were abandoned on the grounds of a monastery. The first two have already gone to homes from the clinic. These two also have ringworm, and it's such that it cannot be treated at the shelter, so I have to keep them in the clinic. The kittens have received their first vaccination.",
-    "images": ["./patrickmaryika1.jpg", "./patrickmaryika2.jpg"]
+    "images": [
+      "src/assets/patrickmaryika1.jpg",
+      "src/assets/patrickmaryika2.jpg"
+    ]
   }
 ]
