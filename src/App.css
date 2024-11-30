@@ -21,8 +21,12 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 10px 20px;
-  background-color: rgb(1, 102, 1);
+  background-color: rgba(36, 169, 40, 0.1);
   height: 90px;
+  border-radius: 8px;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
 }
 
 .navbar-logo {
@@ -32,6 +36,16 @@ body {
 
 .logo {
   height: 150px;
+}
+
+.navbar-title {
+  font-family:'Lobster', cursive;
+  font-size: 60px;
+  margin: 0;
+  color: rgb(232, 240, 231);
+  -webkit-text-stroke: 2px rgb(91, 169, 65);
+  
+  
 }
 
 .navbar-links {
@@ -46,7 +60,7 @@ body {
 }
 
 .navbar-link:hover {
-  color: #fffb00;
+  color: #7ffc0b;
 }
 
 /* card on homepage */

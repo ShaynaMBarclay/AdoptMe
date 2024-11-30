@@ -9,7 +9,8 @@ const Navbar = () => {
         <Link to="/">
           <img src="src/assets/logonobackground.png" alt="AdoptMe Logo" className="logo" />
         </Link>
-      <h1>AdoptMe</h1>
+      <h1 className = "navbar-title">
+        AdoptMe</h1>
       </div>
       
       <div className="navbar-links">
