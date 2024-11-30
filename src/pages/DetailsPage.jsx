@@ -34,6 +34,12 @@ function DetailsPage() {
     <div>
       {/* Display the animal's name */}
       <h1>{animal.name}</h1>
+      {/* 
+      <img
+        src={animal.image}
+        alt={animal.name}
+        style={{ width: "300px", height: "auto" }}
+      /> */}
 
       {/* Display the animal's image with a fixed width */}
       <img
@@ -65,5 +71,5 @@ function DetailsPage() {
   );
 }
 
-// Export the DetailsPage component so it can be imported and used in other files
+//Export the DetailsPage component so it can be imported and used in other files
 export default DetailsPage;

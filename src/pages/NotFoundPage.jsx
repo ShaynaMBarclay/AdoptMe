@@ -8,7 +8,6 @@ export const NotFoundPage = () => {
         <img src="./page-not-found.PNG" alt="notFound" />
         <Link to="/">HomePage</Link>
       </div>
-      ;
     </div>
   );
 };
