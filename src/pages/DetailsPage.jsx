@@ -63,7 +63,7 @@ function DetailsPage() {
 
       {/* Button to navigate back to the homepage */}
       <Link to="/submitForm">
-        <button>
+        <button className="details-btn">
           Adopt Me<h1>🦝</h1>
         </button>
       </Link>

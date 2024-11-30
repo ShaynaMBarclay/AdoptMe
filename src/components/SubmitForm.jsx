@@ -16,22 +16,22 @@ function SubmitForm() {
   };
 
   const handleSurnameChange = (e) => {
-    setName(e.target.value);
+    setSurname(e.target.value);
   };
   const handleAddressChange = (e) => {
-    setName(e.target.value);
+    setAddress(e.target.value);
   };
   const handleZipCodeChange = (e) => {
-    setName(e.target.value);
+    setZipCode(e.target.value);
   };
   const handleCityChange = (e) => {
-    setName(e.target.value);
+    setCity(e.target.value);
   };
   const handleCountryChange = (e) => {
-    setName(e.target.value);
+    setCountry(e.target.value);
   };
   const handlePhoneChange = (e) => {
-    setName(e.target.value);
+    setPhone(e.target.value);
   };
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -45,7 +45,7 @@ function SubmitForm() {
       return;
     }
 
-    console.log("Send data:", { name, email });
+    console.log("Send data:", { name, email, zipCode });
 
     setName("");
     setSurname("");
@@ -97,12 +97,14 @@ function SubmitForm() {
           type="text"
           id="zipCode"
           value={zipCode}
-          onChange={handleAddressChange}
+          onChange={handleZipCodeChange}
           placeholder=""
         />
       </div>
       <div>
-        <label htmlFor="city">City:</label>
+        <label className="submit-city" htmlFor="city">
+          City:
+        </label>
         <input
           type="text"
           id="city"
@@ -142,7 +144,7 @@ function SubmitForm() {
         />
       </div>
       <div>
-        <button type="submit">Отправить</button>
+        <button type="submit">Submit</button>
       </div>
     </form>
   );
