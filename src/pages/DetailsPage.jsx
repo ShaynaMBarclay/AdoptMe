@@ -2,7 +2,7 @@
 
 // Import necessary modules and hooks from React and React Router
 import React from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 // Define the DetailsPage functional component
 function DetailsPage() {
@@ -56,9 +56,11 @@ function DetailsPage() {
       <p>{animal.description}</p>
 
       {/* Button to navigate back to the homepage */}
-      <button onClick={() => navigate("./components/SubmitForm")}>
-        Adopt Me<h1>🦝</h1>
-      </button>
+      <Link to="/submitForm">
+        <button>
+          Adopt Me<h1>🦝</h1>
+        </button>
+      </Link>
     </div>
   );
 }
