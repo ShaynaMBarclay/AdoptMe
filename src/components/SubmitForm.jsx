@@ -61,44 +61,53 @@ function SubmitForm() {
   return (
     <form onSubmit={handleSubmit}>
       {error && <p style={{ color: "red" }}>{error}</p>}
-      <div>
-        <label htmlFor="name">Name:</label>
+      <div className="form-container">
+        <h2>Submit Form</h2>
+        <label className="submit-name" htmlFor="name">
+          Name:
+        </label>
         <input
           type="text"
           id="name"
           value={name}
           onChange={handleNameChange}
-          placeholder=""
+          placeholder="*"
         />
       </div>
       <div>
-        <label htmlFor="surname">Surname:</label>
+        <label className="submit-surname" htmlFor="surname">
+          Surname:
+        </label>
         <input
           type="text"
           id="Surname"
           value={surname}
           onChange={handleSurnameChange}
-          placeholder=""
+          placeholder="*"
         />
       </div>
       <div>
-        <label htmlFor="address">Address:</label>
+        <label className="submit-address" htmlFor="address">
+          Address:
+        </label>
         <input
           type="text"
           id="address"
           value={address}
           onChange={handleAddressChange}
-          placeholder=""
+          placeholder="*"
         />
       </div>
       <div>
-        <label htmlFor="zipCode">ZipCode:</label>
+        <label className="submit-zipCode" htmlFor="zipCode">
+          ZipCode:
+        </label>
         <input
           type="text"
           id="zipCode"
           value={zipCode}
           onChange={handleZipCodeChange}
-          placeholder=""
+          placeholder="*"
         />
       </div>
       <div>
@@ -110,37 +119,43 @@ function SubmitForm() {
           id="city"
           value={city}
           onChange={handleCityChange}
-          placeholder=""
+          placeholder="*"
         />
       </div>
       <div>
-        <label htmlFor="country">Country:</label>
+        <label className="submit-country" htmlFor="country">
+          Country:
+        </label>
         <input
           type="text"
           id="country"
           value={country}
           onChange={handleCountryChange}
-          placeholder=""
+          placeholder="*"
         />
       </div>
       <div>
-        <label htmlFor="phone">Phone:</label>
+        <label className="submit-phone" htmlFor="phone">
+          Phone:
+        </label>
         <input
           type="tel"
           id="phone"
           value={phone}
           onChange={handlePhoneChange}
-          placeholder=""
+          placeholder="*"
         />
       </div>
       <div>
-        <label htmlFor="email">E-mail:</label>
+        <label className="submit-email" htmlFor="email">
+          E-mail:
+        </label>
         <input
           type="email"
           id="email"
           value={email}
           onChange={handleEmailChange}
-          placeholder=""
+          placeholder="*"
         />
       </div>
       <div>
