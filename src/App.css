@@ -103,28 +103,19 @@ body {
 }
 /*Submit Form*/
 
-.submit-surname {
-}
-.submit-address {
-}
-
-.submit-zipCode {
+.form-container {
+  text-align: left;
 }
 
-.submit-city {
+.form-container div label {
+  color: #500202;
 }
 
-.submit-country {
-  color: #333;
-}
-
-.submit-phone {
-}
-
-.submit-email {
-}
-.form-group {
-  margin-bottom: 20px;
+.form-container div input {
+  background-color: #057973;
+  padding: 5px;
+  width: 490px;
+  font-size: 1.4rem;
 }
 .form-group label {
   font-size: 16px;
@@ -141,6 +132,10 @@ body {
   color: #333;
   background-color: white;
   box-sizing: border-box;
+}
+
+.button {
+  color: #333;
 }
 /* Modal/Pop up Screen */
 .modal {
