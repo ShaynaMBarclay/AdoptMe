@@ -7,6 +7,7 @@ import DetailsPage from "./pages/DetailsPage";
 import { NotFoundPage } from "./pages/NotFoundPage";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
+import SubmitForm from "./components/SubmitForm";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/" element={<HomePage animals={dataAnimals} />} />
         <Route path="/details/:cardId" element={<DetailsPage />} />
         <Route path="/about" element={<AboutPage />} />
+        <Route path="/submitForm" element={<SubmitForm />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <Footer />

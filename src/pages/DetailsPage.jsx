@@ -1,7 +1,8 @@
 // Comments added by Shayna to explain her work and what each piece of code does
 
-// Import necessary modules and hooks and React Router
-import { useLocation, useNavigate } from "react-router-dom";
+// Import necessary modules and hooks from React and React Router
+import React from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 // Define the DetailsPage functional component
 function DetailsPage() {
@@ -22,6 +23,7 @@ function DetailsPage() {
         <p>No animal data available.</p>
 
         {/* Button to navigate back to the homepage */}
+
         <button onClick={() => navigate("/")}>Go Back to Homepage</button>
       </div>
     );
@@ -39,10 +41,19 @@ function DetailsPage() {
         style={{ width: "300px", height: "auto" }}
       /> */}
 
+      {/* Display the animal's image with a fixed width */}
+      <img
+        src={animal.image}
+        alt={animal.name}
+        style={{ width: "300px", height: "auto" }}
+      />
+
+      {/* Display the animal's species */}
       <p>
         <strong>Species:</strong> {animal.species}
       </p>
 
+      {/* Display the animal's age */}
       <p>
         <strong>Age:</strong> {animal.age}
       </p>
@@ -51,10 +62,14 @@ function DetailsPage() {
       <p>{animal.description}</p>
 
       {/* Button to navigate back to the homepage */}
-      <button onClick={() => navigate("/")}>Go Back to Homepage</button>
+      <Link to="/submitForm">
+        <button className="details-btn">
+          Adopt Me<h1>🦝</h1>
+        </button>
+      </Link>
     </div>
   );
 }
 
-// Export the DetailsPage component so it can be imported and used in other files
+//Export the DetailsPage component so it can be imported and used in other files
 export default DetailsPage;
