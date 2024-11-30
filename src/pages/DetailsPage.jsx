@@ -4,7 +4,8 @@
 import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import SubmitForm from "../components/SubmitForm"; // Import SubmitForm
-
+const test =
+  "https://res.cloudinary.com/dmvawq2ak/image/upload/v1732977208/simona1_meam0a.jpg";
 // Define the DetailsPage functional component
 function DetailsPage() {
   // state to control the modal visibility
@@ -55,7 +56,7 @@ function DetailsPage() {
 
       {/* Display the animal's image with a fixed width */}
       <img
-        src={animal.image}
+        src={test}
         alt={animal.name}
         style={{ width: "300px", height: "auto" }}
       />
