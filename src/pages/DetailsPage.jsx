@@ -1,7 +1,7 @@
 // Comments added by Shayna to explain her work and what each piece of code does
 
 // Import necessary modules and hooks from React and React Router
-import React, { useState } from "react";
+import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import SubmitForm from "../components/SubmitForm"; // Import SubmitForm
 
@@ -39,7 +39,7 @@ function DetailsPage() {
 
   const closeModal = () => {
     setIsModalOpen(false);
-  }
+  };
 
   // Render the details of the animal if data is available
   return (
@@ -80,22 +80,22 @@ function DetailsPage() {
 
       {/* Modal Logic */}
       {isModalOpen && (
-         <div className="modal">
-         <div className="modal-content">
-           <span className="close" onClick={closeModal}>
-             &times;
-             </span>
-             <h2>Submit Form</h2>
-             <SubmitForm closeModal={closeModal} />
-             </div>
-             </div>
+        <div className="modal">
+          <div className="modal-content">
+            <span className="close" onClick={closeModal}>
+              &times;
+            </span>
+            <h2>Submit Form</h2>
+            <SubmitForm closeModal={closeModal} />
+          </div>
+        </div>
       )}
-      </div>
+    </div>
   );
 }
 
-
-      {/* Button to navigate back to the homepage 
+{
+  /* Button to navigate back to the homepage 
       <Link to="/submitForm">
         <button className="details-btn">
           Adopt Me<h1>🦝</h1>
@@ -104,7 +104,8 @@ function DetailsPage() {
     </div>
   );
 }
-*/}
+*/
+}
 
 //Export the DetailsPage component so it can be imported and used in other files
 export default DetailsPage;
