@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function SubmitForm() {
+const SubmitForm = ({closeModal}) => {
   const [name, setName] = useState("");
   const [surname, setSurname] = useState("");
   const [address, setAddress] = useState("");
@@ -47,6 +47,7 @@ function SubmitForm() {
 
     console.log("Send data:", { name, email, zipCode });
 
+    // Reset form and close the modal
     setName("");
     setSurname("");
     setAddress("");
@@ -56,6 +57,11 @@ function SubmitForm() {
     setPhone("");
     setEmail("");
     setError("");
+
+    // Close the modal after submission
+   if (closeModal) {
+    closeModal();
+   }
   };
 
   return (
