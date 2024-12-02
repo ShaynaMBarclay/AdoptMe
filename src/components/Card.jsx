@@ -24,7 +24,6 @@ const Card = ({ animal }) => {
         <img
           src={animal.images[0]}
           alt={`Photo of ${animal.name}`}
-          style={{ height: "300px", width: "auto" }}
           className="card-img"
         />
       )}

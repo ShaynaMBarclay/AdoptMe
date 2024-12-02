@@ -22,7 +22,7 @@ body {
   justify-content: space-between;
   padding: 10px 20px;
   background-color: rgba(36, 169, 40, 0.1);
-  height: 90px; 
+  height: 90px;
   border-radius: 8px;
   position: sticky;
   top: 0;
@@ -36,12 +36,12 @@ body {
 }
 
 .navbar-logo .logo {
-  height: 150px; 
+  height: 150px;
   transition: height 0.3s ease;
 }
 
 .navbar-title {
-  font-family: 'Lobster', cursive;
+  font-family: "Lobster", cursive;
   font-size: 60px;
   margin: 0;
   color: rgb(232, 240, 231);
@@ -51,20 +51,20 @@ body {
 
 /* When Navbar is Scrolled */
 .navbar.scrolled {
-  height: 60px; 
+  height: 60px;
   padding: 5px 10px;
 }
 
 .navbar.scrolled .logo {
-  height: 80px; 
+  height: 80px;
 }
 
 .navbar.scrolled .navbar-title {
-  font-size: 40px; 
+  font-size: 40px;
 }
 
 .navbar.scrolled .navbar-links {
-  gap: 10px;  
+  gap: 10px;
 }
 
 /* Navbar Links Styling */
@@ -77,7 +77,7 @@ body {
   text-decoration: none;
   color: black;
   font-weight: bold;
-  font-size: 18px; 
+  font-size: 18px;
 }
 
 .navbar-link:hover {
@@ -89,13 +89,13 @@ body {
 @media (max-width: 768px) {
   .navbar {
     display: flex;
-   align-items: center;
-   justify-content: space-between;
-   padding: 10px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
   }
 
   .navbar-title {
-    font-size: 30px; 
+    font-size: 30px;
   }
 
   .navbar-links {
@@ -104,20 +104,18 @@ body {
   }
 
   .navbar-links .navbar-link {
-    font-size: 16px; 
-    
+    font-size: 16px;
   }
 
   .navbar.scrolled {
-    height: 50px; 
+    height: 50px;
     padding: 5px;
   }
 
   .navbar.scrolled .logo {
-    height: 60px; 
+    height: 60px;
   }
 }
-
 
 /* card on homepage */
 
@@ -147,9 +145,10 @@ body {
 }
 
 .card img {
-  width: 100%; /* Make images responsive */
-  height: auto;
+  max-width: 100%; /* Make images responsive */
+  height: 70%;
   border-radius: 8px;
+  object-fit: cover;
 }
 
 /*Details Page*/
@@ -171,6 +170,47 @@ body {
 .details-btn:hover {
   color: #fffb00;
 }
+
+/* Images on details page */
+
+.gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.selected-image {
+  margin-bottom: 20px;
+}
+
+.large-image {
+  width: 80%; /* Dynamically sized to fit the layout */
+  max-width: 400px; /* Maximum limit for the large image */
+  height: auto;
+}
+
+.thumbnails {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.thumbnail {
+  cursor: pointer;
+  width: 80px;
+  height: auto;
+  transition: transform 0.2s;
+  border: 2px solid transparent; /* Default state */
+}
+
+.thumbnail.active {
+  border: 2px solid blue; /* Indicate active thumbnail */
+}
+
+.thumbnail:hover {
+  transform: scale(1.1);
+}
+
 /*Submit Form*/
 
 .form-container {

@@ -3,16 +3,13 @@ import { useLocation, useNavigate } from "react-router-dom";
 import SubmitForm from "../components/SubmitForm";
 
 function DetailsPage() {
-  // state to control the modal visibility
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  // Get the current location object to access state passed via navigation
-  const location = useLocation();
-
-  // Hook for programmatic navigation
-  const navigate = useNavigate();
-
-  // Destructure the `animal` object from the location's state or set it to undefined if not present
-  const { animal } = location.state || {};
+  const [isModalOpen, setIsModalOpen] = useState(false); // state to control the modal visibility
+  const location = useLocation(); // Get the current location object to access state passed via navigation
+  const navigate = useNavigate(); // Hook for programmatic navigation
+  const { animal } = location.state || {}; // Destructure the `animal` object from the location's state or set it to undefined if not present
+  const initialImage = animal?.images ? animal.images[0] : null;
+  const [selectedImage, setSelectedImage] = useState(initialImage);
+  // const [selectedImage, setSelectedImage] = useState(animal?.images[0]); // State to track the selected image from the gallery ;'?' - to check if object exicts
 
   if (!animal) {
     return (
@@ -33,18 +30,32 @@ function DetailsPage() {
   return (
     <div>
       <h1>{animal.name}</h1>
-      <img
-        src={animal.images[0]}
-        alt={animal.name}
-        style={{ height: "500px" }}
-      />
+      {/* Display the large version of the selected image */}
+      {selectedImage && (
+        <img
+          src={selectedImage}
+          alt={`${animal.name} large view`}
+          style={{ height: "500px" }}
+        />
+      )}
+      <div className="thumbnails">
+        {animal.images.map((imgSrc, index) => (
+          <img
+            key={index}
+            src={imgSrc}
+            alt={`${animal.name} thumbnail ${index + 1}`}
+            className={`thumbnail ${selectedImage === imgSrc ? "active" : ""}`}
+            onClick={() => setSelectedImage(imgSrc)} // Update selected image
+            style={{ cursor: "pointer", width: "100px", margin: "5px" }}
+          />
+        ))}
+      </div>
       <p>
         <strong>Species:</strong> {animal.species}
       </p>
       <p>
         <strong>Age:</strong> {animal.age}
       </p>
-
       <p>{animal.description}</p>
 
       <button className="details-btn" onClick={openModal}>
@@ -67,6 +78,8 @@ function DetailsPage() {
   );
 }
 
+export default DetailsPage;
+
 {
   /* Button to navigate back to the homepage 
       <Link to="/submitForm">
@@ -79,4 +92,3 @@ function DetailsPage() {
 }
 */
 }
-export default DetailsPage;
