@@ -1,18 +1,14 @@
-// comments by Shayna to explain her work 
-
-import React, { useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 
 export const AddForm = ({ onAdd }) => {
-    // State for form fields
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [age, setAge] = useState("");
   const [species, setSpecies] = useState("");
   const [images, setImages] = useState(["", "", "", "", ""]);
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  
 
   // Handle image URL updates
   const handleImageChange = (index, value) => {
@@ -37,33 +33,34 @@ export const AddForm = ({ onAdd }) => {
     };
 
     try {
-        // Send to backend
-        const response = await axios.post("http://localhost:5005/cats", newAnimal);
-  
-        // After successful response, call the onAdd function to update the animals state in App
-        onAdd(response.data);
+      // Send to backend
+      const response = await axios.post(
+        "http://localhost:5005/cats",
+        newAnimal
+      );
 
+      // After successful response, call the onAdd function to update the animals state in App
+      onAdd(response.data);
 
-     // Reset form fields
-    setName("");
-    setDescription("");
-    setAge("");
-    setSpecies("");
-    setImages(["", "", "", "", ""]);
-} catch (error) {
-    setError("Failed to add the animal. Please try again.");
-  } finally {
-    setLoading(false); // Reset loading state
-  }
+      // Reset form fields
+      setName("");
+      setDescription("");
+      setAge("");
+      setSpecies("");
+      setImages(["", "", "", "", ""]);
+    } catch (error) {
+      setError("Failed to add the animal. Please try again.");
+    } finally {
+      setLoading(false); // Reset loading state
+    }
   };
 
   return (
     <form onSubmit={handleSubmit}>
       <h2>Add Animal</h2>
 
-      {/* Display error message if any */}
       {error && <p style={{ color: "red" }}>{error}</p>}
-      
+
       <input
         type="text"
         placeholder="Name"
@@ -103,9 +100,7 @@ export const AddForm = ({ onAdd }) => {
         />
       ))}
 
-
-     
-    {/* Disable the submit button and show loading text while submitting */}
+      {/* Disable the submit button and show loading text while submitting */}
       <button type="submit" disabled={loading}>
         {loading ? "Adding Animal..." : "Add Animal"}
       </button>

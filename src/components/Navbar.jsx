@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
@@ -23,7 +23,6 @@ const Navbar = () => {
 
   return (
     <nav className={`navbar ${isScrolled ? "scrolled" : ""}`}>
-      {/* Logo and Title */}
       <div className="navbar-logo">
         <Link to="/">
           <img
@@ -36,13 +35,14 @@ const Navbar = () => {
       </div>
 
       <div className="navbar-links">
-      <Link to="/" className="navbar-link">
+        <Link to="/" className="navbar-link">
           Home
         </Link>
         <Link to="/about" className="navbar-link">
           About
         </Link>
-        <Link to="/add-animal" className="navbar-link">Add Animal
+        <Link to="/add-animal" className="navbar-link">
+          Add Animal
         </Link>
       </div>
     </nav>
