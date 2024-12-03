@@ -40,7 +40,7 @@ function App() {
         <Route path="/details/:cardId" element={<DetailsPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/submitForm" element={<SubmitForm />} />
-    
+
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <Footer />
