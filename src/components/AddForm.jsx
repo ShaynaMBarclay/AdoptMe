@@ -7,6 +7,8 @@ export const AddForm = ({ onAdd }) => {
   const [age, setAge] = useState("");
   const [species, setSpecies] = useState("");
   const [images, setImages] = useState(["", "", "", "", ""]);
+  const [vaccination, setVaccination] = useState(false);
+  const [sterilisation, setSterilisation] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -29,6 +31,8 @@ export const AddForm = ({ onAdd }) => {
       description,
       age: parseFloat(age),
       species,
+      vaccination,
+      sterilisation,
       images: images.filter((img) => img.trim() !== ""), // Filter out empty URLs
     };
 
@@ -48,6 +52,8 @@ export const AddForm = ({ onAdd }) => {
       setAge("");
       setSpecies("");
       setImages(["", "", "", "", ""]);
+      setVaccination(false);
+      setSterilisation(false);
     } catch (error) {
       setError("Failed to add the animal. Please try again.");
     } finally {
@@ -89,6 +95,26 @@ export const AddForm = ({ onAdd }) => {
         onChange={(e) => setSpecies(e.target.value)}
         required
       />
+            <div>
+        <label>
+          <input
+            type="checkbox"
+            checked={vaccination}
+            onChange={(e) => setVaccination(e.target.checked)}
+          />
+          Vaccinated
+        </label>
+      </div>
+      <div>
+        <label>
+          <input
+            type="checkbox"
+            checked={sterilisation}
+            onChange={(e) => setSterilisation(e.target.checked)}
+          />
+          Sterilized
+        </label>
+      </div>
       <h3>Images (Add up to 5 URLs)</h3>
       {images.map((image, index) => (
         <input
