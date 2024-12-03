@@ -1,16 +1,18 @@
 import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import SubmitForm from "../components/SubmitForm";
+import axios from "axios";
 
 function DetailsPage() {
-  const [isModalOpen, setIsModalOpen] = useState(false); // state to control the modal visibility
+  const [isModalOpen, setIsModalOpen] = useState(false); 
+  const [isEditing, setIsEditing] = useState(false);
+  const [editedAnimal, setEditedAnimal] = useState({});// state to control the modal visibility
   const location = useLocation(); // Get the current location object to access state passed via navigation
   const navigate = useNavigate(); // Hook for programmatic navigation
   const { animal } = location.state || {}; // Destructure the `animal` object from the location's state or set it to undefined if not present
   const initialImage = animal?.images ? animal.images[0] : null;
   const [selectedImage, setSelectedImage] = useState(initialImage);
-  // const [selectedImage, setSelectedImage] = useState(animal?.images[0]); // State to track the selected image from the gallery ;'?' - to check if object exicts
-
+  
   if (!animal) {
     return (
       <div>
@@ -27,6 +29,33 @@ function DetailsPage() {
     setIsModalOpen(false);
   };
 
+  const handleDelete = async () => {
+    try {
+      await axios.delete(`http://localhost:5005/cats/${animal.id}`);
+      alert("Animal deleted successfully.");
+        //signal refresh on the homepage (I learned this from google)
+      navigate("/", { state: { refresh: true } });
+    } catch (error) {
+      console.error("Delete failed:", error);
+      alert("Failed to delete. Please try again.");
+    }
+    };
+
+    const handleEdit = () => {
+      setEditedAnimal(animal);
+      setIsEditing(true);
+    };
+    const handleSave = async () => {
+      try {
+        await axios.put(`http://localhost:5005/cats/${animal.id}`, editedAnimal);
+        alert("Animal details updated successfully.");
+        setIsEditing(false);
+        navigate("/", { state: { animal: editedAnimal } }); // redirect to refresh the details
+      } catch (error) {
+        console.error("Update failed:", error);
+        alert("Failed to update animal details. Please try again.");
+      }
+  }
   return (
     <div>
       <h1>{animal.name}</h1>
@@ -50,6 +79,8 @@ function DetailsPage() {
           />
         ))}
       </div>
+      {!isEditing ? (
+        <>
       <p>
         <strong>Species:</strong> {animal.species}
       </p>
@@ -62,12 +93,78 @@ function DetailsPage() {
       <p>
         <strong>Sterilized:</strong> {animal.sterilisation ? "Yes" : "No"}
       </p>
-
       <p>{animal.description}</p>
+
+      </>
+      ) : (
+        <>
+        <input
+       type="text"
+       placeholder="Name"
+       value={editedAnimal.name || ""}
+       onChange={(e) =>
+         setEditedAnimal({ ...editedAnimal, name: e.target.value })
+       }
+     />
+     <input
+       type="text"
+       placeholder="Description"
+       value={editedAnimal.description || ""}
+       onChange={(e) =>
+         setEditedAnimal({ ...editedAnimal, description: e.target.value })
+       }
+     />
+     <input
+       type="number"
+       placeholder="Age"
+       value={editedAnimal.age || ""}
+       onChange={(e) =>
+         setEditedAnimal({ ...editedAnimal, age: e.target.value })
+       }
+     />
+     <label>
+       <input
+         type="checkbox"
+         checked={editedAnimal.vaccination || false}
+         onChange={(e) =>
+           setEditedAnimal({
+             ...editedAnimal,
+             vaccination: e.target.checked,
+           })
+         }
+       />
+       Vaccinated
+     </label>
+     <label>
+       <input
+         type="checkbox"
+         checked={editedAnimal.sterilisation || false}
+         onChange={(e) =>
+           setEditedAnimal({
+             ...editedAnimal,
+             sterilisation: e.target.checked,
+           })
+         }
+       />
+       Sterilized
+     </label>
+   </>
+ )} 
 
       <button className="details-btn" onClick={openModal}>
         Adopt {animal.name} 🦝
       </button>
+
+      {!isEditing ? (
+          <button onClick={handleEdit}>Edit</button>
+      ) : (
+        <>
+        <button onClick={handleSave}>Save</button>
+        <button onClick={handleDelete} style={{ color: "red" }}>
+      Delete
+    </button>
+    </>
+      )}
 
       {/* Modal Logic */}
       {isModalOpen && (
