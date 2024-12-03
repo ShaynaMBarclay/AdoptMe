@@ -229,7 +229,7 @@ body {
 }
 .form-group label {
   font-size: 16px;
-  color: #333;
+  color: #0a0101;
   margin-bottom: 5px;
   display: block;
 }
@@ -239,7 +239,7 @@ body {
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  color: #333;
+  color: #110101;
   background-color: white;
   box-sizing: border-box;
 }
@@ -284,6 +284,19 @@ body {
 
 .close:hover {
   color: black;
+}
+
+/*Footer */
+
+.footer {
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgb(91, 169, 65);
+  color: white;
+  text-align: center;
+  padding: 10px 0;
 }
 
 /* mobile version */

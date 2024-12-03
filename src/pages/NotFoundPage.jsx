@@ -5,7 +5,12 @@ export const NotFoundPage = () => {
     <div>
       NotFound
       <div className="notFound">
-        <img src="./page-not-found.PNG" alt="notFound" />
+        <img
+          src="https://res.cloudinary.com/dmvawq2ak/image/upload/v1733255062/NotFound_shddcr.png
+"
+          alt="Page not Found"
+        />
+
         <Link to="/">HomePage</Link>
       </div>
     </div>
