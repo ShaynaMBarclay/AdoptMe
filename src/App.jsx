@@ -10,7 +10,6 @@ import Navbar from "./components/Navbar";
 import SubmitForm from "./components/SubmitForm";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import AddImage from "./components/AddImage";
 
 function App() {
   const [animals, setAnimals] = useState([]);
@@ -41,7 +40,7 @@ function App() {
         <Route path="/details/:cardId" element={<DetailsPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/submitForm" element={<SubmitForm />} />
-        <Route path="/AddImage" element={<AddImage />} />
+
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <Footer />
