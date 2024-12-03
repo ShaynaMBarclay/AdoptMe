@@ -1,82 +1,65 @@
-// Comments added by Shayna to explain her work and what each piece of code does
-
-// Import necessary modules and hooks from React and React Router
 import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import SubmitForm from "../components/SubmitForm"; // Import SubmitForm
-const test =
-  "https://res.cloudinary.com/dmvawq2ak/image/upload/v1732977208/simona1_meam0a.jpg";
-// Define the DetailsPage functional component
+import SubmitForm from "../components/SubmitForm";
+
 function DetailsPage() {
-  // state to control the modal visibility
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  // Get the current location object to access state passed via navigation
-  const location = useLocation();
+  const [isModalOpen, setIsModalOpen] = useState(false); // state to control the modal visibility
+  const location = useLocation(); // Get the current location object to access state passed via navigation
+  const navigate = useNavigate(); // Hook for programmatic navigation
+  const { animal } = location.state || {}; // Destructure the `animal` object from the location's state or set it to undefined if not present
+  const initialImage = animal?.images ? animal.images[0] : null;
+  const [selectedImage, setSelectedImage] = useState(initialImage);
+  // const [selectedImage, setSelectedImage] = useState(animal?.images[0]); // State to track the selected image from the gallery ;'?' - to check if object exicts
 
-  // Hook for programmatic navigation
-  const navigate = useNavigate();
-
-  // Destructure the `animal` object from the location's state or set it to undefined if not present
-  const { animal } = location.state || {};
-
-  // Check if no animal data was passed to this page
   if (!animal) {
     return (
       <div>
-        {/* Display a message if no animal data is available */}
         <p>No animal data available.</p>
-
-        {/* Button to navigate back to the homepage */}
-
         <button onClick={() => navigate("/")}>Go Back to Homepage</button>
       </div>
     );
   }
 
-  // Function to open the modal
   const openModal = () => {
     setIsModalOpen(true);
   };
-
   const closeModal = () => {
     setIsModalOpen(false);
   };
 
-  // Render the details of the animal if data is available
   return (
     <div>
-      {/* Display the animal's name */}
       <h1>{animal.name}</h1>
-      {/* 
-      <img
-        src={animal.image}
-        alt={animal.name}
-        style={{ width: "300px", height: "auto" }}
-      /> */}
-
-      {/* Display the animal's image with a fixed width */}
-      <img
-        src={test}
-        alt={animal.name}
-        style={{ width: "300px", height: "auto" }}
-      />
-
-      {/* Display the animal's species */}
+      {/* Display the large version of the selected image */}
+      {selectedImage && (
+        <img
+          src={selectedImage}
+          alt={`${animal.name} large view`}
+          style={{ height: "500px" }}
+        />
+      )}
+      <div className="thumbnails">
+        {animal.images.map((imgSrc, index) => (
+          <img
+            key={index}
+            src={imgSrc}
+            alt={`${animal.name} thumbnail ${index + 1}`}
+            className={`thumbnail ${selectedImage === imgSrc ? "active" : ""}`}
+            onClick={() => setSelectedImage(imgSrc)} // Update selected image
+            style={{ cursor: "pointer", width: "100px", margin: "5px" }}
+          />
+        ))}
+      </div>
       <p>
         <strong>Species:</strong> {animal.species}
       </p>
-
-      {/* Display the animal's age */}
       <p>
         <strong>Age:</strong> {animal.age}
       </p>
-
-      {/* Display a description of the animal */}
       <p>{animal.description}</p>
 
-      {/* Button to open the modal */}
       <button className="details-btn" onClick={openModal}>
-        Adopt Me 🦝
+        Adopt {animal.name} 🦝
       </button>
 
       {/* Modal Logic */}
@@ -95,6 +78,8 @@ function DetailsPage() {
   );
 }
 
+export default DetailsPage;
+
 {
   /* Button to navigate back to the homepage 
       <Link to="/submitForm">
@@ -107,6 +92,3 @@ function DetailsPage() {
 }
 */
 }
-
-//Export the DetailsPage component so it can be imported and used in other files
-export default DetailsPage;
