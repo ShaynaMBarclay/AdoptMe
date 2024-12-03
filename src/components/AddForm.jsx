@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 export const AddForm = ({ onAdd }) => {
@@ -11,6 +12,9 @@ export const AddForm = ({ onAdd }) => {
   const [sterilisation, setSterilisation] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+
+  const navigate = useNavigate();
+
 
   // Handle image URL updates
   const handleImageChange = (index, value) => {
@@ -45,6 +49,9 @@ export const AddForm = ({ onAdd }) => {
 
       // After successful response, call the onAdd function to update the animals state in App
       onAdd(response.data);
+
+      navigate("/");
+      
 
       // Reset form fields
       setName("");

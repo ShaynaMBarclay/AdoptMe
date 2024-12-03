@@ -25,7 +25,7 @@ function App() {
   }, []);
 
   const handleAddAnimal = (newAnimal) => {
-    setAnimals((prevAnimals) => [...prevAnimals, newAnimal]); // Add new animal
+    setAnimals((prevAnimals) => [newAnimal, ...prevAnimals]); // Add new animal
   };
 
   return (
