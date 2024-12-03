@@ -11,7 +11,6 @@ import SubmitForm from "./components/SubmitForm";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import AddImage from "./components/AddImage";
-import { Link } from "react-router-dom";
 
 function App() {
   const [animals, setAnimals] = useState([]);
@@ -30,20 +29,21 @@ function App() {
     setAnimals((prevAnimals) => [...prevAnimals, newAnimal]); // Add new animal
   };
 
-
   return (
     <main>
       <Navbar className="navbar" />
       <Routes>
         <Route path="/" element={<HomePage animals={animals} />} />
-        <Route path="/add-animal" element={<AddAnimalPage  onAdd={handleAddAnimal} />} />
+        <Route
+          path="/add-animal"
+          element={<AddAnimalPage onAdd={handleAddAnimal} />}
+        />
         <Route path="/details/:cardId" element={<DetailsPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/submitForm" element={<SubmitForm />} />
         <Route path="/AddImage" element={<AddImage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
-      <Link to="/AddImage">Upload image to Cloudinary</Link>
       <Footer />
     </main>
   );
