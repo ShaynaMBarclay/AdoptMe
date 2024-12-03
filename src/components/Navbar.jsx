@@ -36,11 +36,13 @@ const Navbar = () => {
       </div>
 
       <div className="navbar-links">
+      <Link to="/" className="navbar-link">
+          Home
+        </Link>
         <Link to="/about" className="navbar-link">
           About
         </Link>
-        <Link to="/" className="navbar-link">
-          Home
+        <Link to="/add-animal" className="navbar-link">Add Animal
         </Link>
       </div>
     </nav>

@@ -3,6 +3,7 @@
 // Importing the Card component to display individual animal details
 import Card from "../components/Card";
 
+
 // Defining the HomePage functional component and accepting 'animals' as a prop
 const HomePage = ({ animals }) => {
   return (

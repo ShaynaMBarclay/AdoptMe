@@ -1,0 +1,114 @@
+// comments by Shayna to explain her work 
+
+import React, { useState } from "react";
+import axios from "axios";
+
+export const AddForm = ({ onAdd }) => {
+    // State for form fields
+  const [name, setName] = useState("");
+  const [description, setDescription] = useState("");
+  const [age, setAge] = useState("");
+  const [species, setSpecies] = useState("");
+  const [images, setImages] = useState(["", "", "", "", ""]);
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState(null);
+  
+
+  // Handle image URL updates
+  const handleImageChange = (index, value) => {
+    const newImages = [...images];
+    newImages[index] = value;
+    setImages(newImages);
+  };
+
+  // Handle form submission
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setError(null);
+
+    const newAnimal = {
+      id: Date.now(),
+      name,
+      description,
+      age: parseFloat(age),
+      species,
+      images: images.filter((img) => img.trim() !== ""), // Filter out empty URLs
+    };
+
+    try {
+        // Send to backend
+        const response = await axios.post("http://localhost:5005/cats", newAnimal);
+  
+        // After successful response, call the onAdd function to update the animals state in App
+        onAdd(response.data);
+
+
+     // Reset form fields
+    setName("");
+    setDescription("");
+    setAge("");
+    setSpecies("");
+    setImages(["", "", "", "", ""]);
+} catch (error) {
+    setError("Failed to add the animal. Please try again.");
+  } finally {
+    setLoading(false); // Reset loading state
+  }
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <h2>Add Animal</h2>
+
+      {/* Display error message if any */}
+      {error && <p style={{ color: "red" }}>{error}</p>}
+      
+      <input
+        type="text"
+        placeholder="Name"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+        required
+      />
+      <input
+        type="text"
+        placeholder="Description"
+        value={description}
+        onChange={(e) => setDescription(e.target.value)}
+        required
+      />
+      <input
+        type="number"
+        placeholder="Age (in years)"
+        value={age}
+        onChange={(e) => setAge(e.target.value)}
+        required
+      />
+      <input
+        type="text"
+        placeholder="Species"
+        value={species}
+        onChange={(e) => setSpecies(e.target.value)}
+        required
+      />
+      <h3>Images (Add up to 5 URLs)</h3>
+      {images.map((image, index) => (
+        <input
+          key={index}
+          type="text"
+          placeholder={`Image URL ${index + 1}`}
+          value={image}
+          onChange={(e) => handleImageChange(index, e.target.value)}
+        />
+      ))}
+
+
+     
+    {/* Disable the submit button and show loading text while submitting */}
+      <button type="submit" disabled={loading}>
+        {loading ? "Adding Animal..." : "Add Animal"}
+      </button>
+    </form>
+  );
+};
