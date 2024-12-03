@@ -56,6 +56,13 @@ function DetailsPage() {
       <p>
         <strong>Age:</strong> {animal.age}
       </p>
+      <p>
+        <strong>Vaccinated:</strong> {animal.vaccination ? "Yes" : "No"}
+      </p>
+      <p>
+        <strong>Sterilized:</strong> {animal.sterilisation ? "Yes" : "No"}
+      </p>
+
       <p>{animal.description}</p>
 
       <button className="details-btn" onClick={openModal}>
