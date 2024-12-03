@@ -75,7 +75,7 @@ body {
 
 .navbar-links .navbar-link {
   text-decoration: none;
-  color: black;
+  color: rgb(255, 255, 255);
   font-weight: bold;
   font-size: 18px;
 }
