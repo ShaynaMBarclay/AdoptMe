@@ -11,7 +11,7 @@ const HomePage = () => {
   const fetchAnimals = async () => {
     try {
       const response = await axios.get("http://localhost:5005/cats");
-      setAnimals(response.data); // Update state with fetched data
+      setAnimals(response.data.reverse()); // Update state with fetched data
     } catch (error) {
       console.error("Failed to fetch animals:", error);
     }

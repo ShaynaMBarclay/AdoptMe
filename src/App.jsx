@@ -19,13 +19,17 @@ function App() {
       .get("http://localhost:5005/cats")
       .then((res) => {
         console.log(res);
-        setAnimals(res.data);
+        setAnimals(res.data.reverse());
       })
       .catch((err) => console.log(err));
   }, []);
 
   const handleAddAnimal = (newAnimal) => {
-    setAnimals((prevAnimals) => [newAnimal, ...prevAnimals]); // Add new animal
+    setAnimals((prevAnimals) => {
+      const updatedAnimals = [...prevAnimals];
+      updatedAnimals.unshift(newAnimal); // Add new animal at the start
+      return updatedAnimals;
+    });
   };
 
   return (
