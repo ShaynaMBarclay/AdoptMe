@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { AddForm } from "../components/AddForm";
 
-const AddAnimalPage = ({ onAdd }) => {
+const AddAnimalPage = ({animals, setAnimals}) => {
     return (
       <div className="add-animal-page">
-        <AddForm onAdd={onAdd} />
+        <AddForm animals={animals} setAnimals={setAnimals} />
       </div>
     );
   };

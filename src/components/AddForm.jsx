@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-export const AddForm = ({ onAdd }) => {
+export const AddForm = ({ animals, setAnimals }) => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [age, setAge] = useState("");
@@ -30,7 +30,6 @@ export const AddForm = ({ onAdd }) => {
     setError(null);
 
     const newAnimal = {
-      id: Date.now(),
       name,
       description,
       age: parseFloat(age),
@@ -48,7 +47,7 @@ export const AddForm = ({ onAdd }) => {
       );
 
       // After successful response, call the onAdd function to update the animals state in App
-      onAdd(response.data);
+      setAnimals([response.data, ...animals]);
 
       navigate("/");
       

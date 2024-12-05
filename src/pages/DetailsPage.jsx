@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import SubmitForm from "../components/SubmitForm";
 import axios from "axios";
 
-function DetailsPage() {
+function DetailsPage({animals, setAnimals}) {
   const [isModalOpen, setIsModalOpen] = useState(false); 
   const [isEditing, setIsEditing] = useState(false);
   const [editedAnimal, setEditedAnimal] = useState({});// state to control the modal visibility
@@ -33,6 +33,13 @@ function DetailsPage() {
     try {
       await axios.delete(`http://localhost:5005/cats/${animal.id}`);
       alert("Animal deleted successfully.");
+      const filteredAnimals = animals.filter((animalOne) => {
+        if (animalOne.id == editedAnimal.id){
+          return false 
+        } else {return true}
+      })
+      setAnimals(filteredAnimals);
+
         //signal refresh on the homepage (I learned this from google)
       navigate("/", { state: { refresh: true } });
     } catch (error) {
@@ -47,9 +54,18 @@ function DetailsPage() {
     };
     const handleSave = async () => {
       try {
+        console.log(editedAnimal)
         await axios.put(`http://localhost:5005/cats/${animal.id}`, editedAnimal);
         alert("Animal details updated successfully.");
         setIsEditing(false);
+        const mappedAnimals = animals.map((animalOne) => {
+          if (animalOne.id == editedAnimal.id){
+            return editedAnimal 
+          } else {return animalOne}
+        })
+        setAnimals(mappedAnimals);
+
+
         navigate("/", { state: { animal: editedAnimal } }); // redirect to refresh the details
       } catch (error) {
         console.error("Update failed:", error);

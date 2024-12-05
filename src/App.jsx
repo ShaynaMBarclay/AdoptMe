@@ -19,14 +19,20 @@ function App() {
       .get("http://localhost:5005/cats")
       .then((res) => {
         console.log(res);
-        setAnimals(res.data);
+        setAnimals(res.data.reverse());
       })
       .catch((err) => console.log(err));
   }, []);
 
-  const handleAddAnimal = (newAnimal) => {
-    setAnimals((prevAnimals) => [newAnimal, ...prevAnimals]); // Add new animal
-  };
+  // const handleAddAnimal = async (newAnimal) => {
+  //   const newAnimals = await axios.post("http://localhost:5005/cats", newAnimal)
+  //   console.log("New Animals", newAnimals)
+  //   setAnimals((prevAnimals) => {
+  //     const updatedAnimals = [...prevAnimals];
+  //     updatedAnimals.unshift(newAnimal); // Add new animal at the start
+  //     return updatedAnimals;
+  //   });
+  // };
 
   return (
     <main>
@@ -35,9 +41,9 @@ function App() {
         <Route path="/" element={<HomePage animals={animals} />} />
         <Route
           path="/add-animal"
-          element={<AddAnimalPage onAdd={handleAddAnimal} />}
+          element={<AddAnimalPage animals={animals} setAnimals={setAnimals} />}
         />
-        <Route path="/details/:cardId" element={<DetailsPage />} />
+        <Route path="/details/:cardId" element={<DetailsPage animals={animals} setAnimals={setAnimals} />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/submitForm" element={<SubmitForm />} />
 
