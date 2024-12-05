@@ -13,6 +13,7 @@ export const AddForm = ({ animals, setAnimals }) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
+
   const navigate = useNavigate();
 
 
