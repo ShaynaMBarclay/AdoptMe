@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const SubmitForm = ({ closeModal }) => {
   const [name, setName] = useState("");
@@ -10,6 +11,9 @@ const SubmitForm = ({ closeModal }) => {
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
+  const [success, setSuccess] = useState(false);
+  
+  const navigate = useNavigate(); //for navigation
 
   const handleNameChange = (e) => {
     setName(e.target.value);
@@ -66,16 +70,24 @@ const SubmitForm = ({ closeModal }) => {
     setPhone("");
     setEmail("");
     setError("");
+    setSuccess(true); // Success notification
 
-    // Close the modal after submission
+       // Simulate a small delay for notification display
+       setTimeout(() => {
+        setSuccess(false); // Hide success notification
+        // Close the modal after submission
     if (closeModal) {
       closeModal();
     }
-  };
+    navigate("/"); //navigate to the homescreen    
+  }, 2000); //2 second delay
+};
+
 
   return (
     <form onSubmit={handleSubmit}>
       {error && <p style={{ color: "red" }}>{error}</p>}
+      {success && <p style={{ color: "green" }}>Form submitted successfully!</p>}
       <div className="form-container">
         <div>
           <label className="submit-name" htmlFor="name">

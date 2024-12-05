@@ -190,7 +190,7 @@ function DetailsPage({animals, setAnimals}) {
               &times;
             </span>
             <h2>Submit Form</h2>
-            <SubmitForm closeModal={closeModal} />
+            <SubmitForm closeModal={closeModal} naviagate={navigate} />
           </div>
         </div>
       )}
