@@ -7,7 +7,7 @@ const HomePage = ({ animals }) => {
   const [filteredAnimals, setFilteredAnimals] = useState(animals);
 
   return (
-    <div className="home-page">
+    <div className="homepage">
       {/* Include the Filter component */}
       <Filter originalData={animals} setData={setFilteredAnimals} />
 

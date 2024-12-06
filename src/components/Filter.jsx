@@ -25,22 +25,20 @@ const Filter = ({ originalData, setData }) => {
   }, [species, special, sterilised, vaccinated, originalData]);
 
   return (
-    <div>
+    <div className="homepage-filters">
       <select onChange={(e) => setSpecies(e.target.value)} value={species}>
         <option value="">All Species</option>
         <option value="cat">Cat</option>
         <option value="dog">Dog</option>
       </select>
-
       <label>
         <input
           type="checkbox"
           checked={special}
           onChange={(e) => setSpecial(e.target.checked)}
         />
-        Special Treatment
+        Special
       </label>
-
       <label>
         <input
           type="checkbox"
@@ -49,7 +47,6 @@ const Filter = ({ originalData, setData }) => {
         />
         Sterilised
       </label>
-
       <label>
         <input
           type="checkbox"

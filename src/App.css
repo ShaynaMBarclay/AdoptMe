@@ -1,13 +1,15 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
 }
 
 main {
   color: #ddd;
   background-color: rgb(68, 66, 66, 0.5);
+  min-height: 100vw;
+  display: flex;
+  flex-direction: column;
 }
 
 body {
@@ -117,6 +119,20 @@ body {
   }
 }
 
+/* Homepage */
+.homepage {
+  display: flex;
+}
+
+.homepage-filters {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 200px;
+  margin: 10px;
+  text-align: left;
+}
+
 /* card on homepage */
 
 .card-container {
@@ -204,7 +220,7 @@ body {
 }
 
 .thumbnail.active {
-  border: 2px solid blue; /* Indicate active thumbnail */
+  border: 2px solid rgb(174, 174, 212); /* Indicate active thumbnail */
 }
 
 .thumbnail:hover {
@@ -289,11 +305,11 @@ body {
 /*Footer */
 
 .footer {
-  position: sticky;
-  bottom: 0;
-  left: 0;
+  align-self: flex-end;
+  /* bottom: 0;
+  left: 0; */
   width: 100%;
-  background-color: rgb(91, 169, 65);
+  background-color: rgb(91, 169, 65, 0.8);
   color: white;
   text-align: center;
   padding: 15px 0;
