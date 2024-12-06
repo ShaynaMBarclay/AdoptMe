@@ -1,19 +1,17 @@
 import { useEffect, useState } from "react";
 
 const Filter = ({ originalData, setData }) => {
-  // State for each filter criterion
   const [species, setSpecies] = useState("");
   const [special, setSpecial] = useState(false);
   const [sterilised, setSterilised] = useState(false);
   const [vaccinated, setVaccinated] = useState(false);
 
   useEffect(() => {
-    // Filter data based on current filter state
     const filteredData = originalData.filter((item) => {
       const matchesSpecies = species ? item.species === species : true;
-      const matchesSpecial = special ? item.specialTreatment : true;
-      const matchesSterilised = sterilised ? item.sterilised : true;
-      const matchesVaccinated = vaccinated ? item.vaccinated : true;
+      const matchesSpecial = special ? item.special : true;
+      const matchesSterilised = sterilised ? item.sterilisation : true;
+      const matchesVaccinated = vaccinated ? item.vaccination : true;
 
       return (
         matchesSpecies &&
