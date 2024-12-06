@@ -12,6 +12,7 @@ const SubmitForm = ({ closeModal }) => {
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
+  const [submissions, setSubmissions] = useState([]);
   
   const navigate = useNavigate(); //for navigation
 
@@ -45,10 +46,10 @@ const SubmitForm = ({ closeModal }) => {
     e.preventDefault();
 
     if (!name || !email) {
-      setError("");
+      setError("Name and email are required.");
       return;
     }
-    const newPerson = {
+    const newSubmission = {
       name,
       email,
       zipCode,
@@ -58,7 +59,10 @@ const SubmitForm = ({ closeModal }) => {
       country,
       phone,
     };
-    console.log("Send data:", newPerson);
+    console.log("Send data:", newSubmission);
+
+     // Store the new submission in the array
+     setSubmissions((prevSubmissions) => [...prevSubmissions, newSubmission]);
 
     // Reset form and close the modal
     setName("");
@@ -80,11 +84,12 @@ const SubmitForm = ({ closeModal }) => {
       closeModal();
     }
     navigate("/"); //navigate to the homescreen    
-  }, 2000); //2 second delay
+  }, 9000); //9 second delay
 };
 
 
   return (
+    <>
     <form onSubmit={handleSubmit}>
       {error && <p style={{ color: "red" }}>{error}</p>}
       {success && <p style={{ color: "green" }}>Form submitted successfully!</p>}
@@ -191,6 +196,32 @@ const SubmitForm = ({ closeModal }) => {
         </div>
       </div>
     </form>
+
+<div className="submissions-container">
+<h2>Submissions</h2>
+{submissions.length === 0 ? (
+  <p>No submissions yet.</p>
+) : (
+  submissions.map((submission, index) => (
+    <div key={index} className="submission-entry">
+      <p>
+        <strong>Name:</strong> {submission.name}
+      </p>
+      <p>
+        <strong>Email:</strong> {submission.email}
+      </p>
+      <p>
+        <strong>Address:</strong> {submission.address}, {submission.city}, {submission.zipCode}, {submission.country}
+      </p>
+      <p>
+        <strong>Phone:</strong> {submission.phone}
+      </p>
+      <hr />
+    </div>
+  ))
+)}
+</div>
+</>
   );
 };
 
