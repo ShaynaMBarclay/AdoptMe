@@ -357,16 +357,26 @@ body {
 }
 
 /*About Page */
+
 .about {
-  font-size: 20px;
-  color: #bad7f5;
-  text-decoration: none;
-  display: block;
-  margin-top: 30px;
-  margin-left: 10px;
-  margin-right: 10px;
-  margin-bottom: 100px;
-  font-size: 26px;
+  img {
+    margin-top: 0px;
+    transform: scale(0.5); /* Scales the image to 50% of its original size */
+  }
+}
+
+.p1 {
+  text-align: left;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.text {
+  width: 60%; /* Ограничиваем ширину текста */
 }
 
 /* mobile version */

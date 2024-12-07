@@ -2,13 +2,17 @@ import { Link } from "react-router-dom";
 const AboutPage = () => {
   return (
     <div>
+      <h1>What is Adopt Me and what do we do?</h1>
+      <p1 className="p1">
+        Adopt Me is a non-profit project aimed at systematically solving the
+        problem of homeless animals in humane ways. Thanks to the Free Online
+        resource, you can find a pet or help a homeless animal find its family.
+      </p1>
       <div className="about">
-      <img
+        <img
           src="https://res.cloudinary.com/dmvawq2ak/image/upload/v1733423691/bve084bq0djpdr9laled.png"
-
-          alt="about"
+          alt="About Page"
         />
-        <h1>Adopt Me</h1>
         <p>
           This is a project that allows anyone to help our smaller brothers.
           <br />
@@ -29,17 +33,16 @@ const AboutPage = () => {
           about the pet.
           <p>Thanks for helping🙏</p>
         </p>
-        
-          <p1>People who create the web page for this project:</p1>
-          <br />
 
-          <p2>Katya Salata</p2>
-          <br />
-          <p3>Shayna Barclay</p3>
-          <br />
-          <p4>Anna Turek</p4>
-          <br />
-        </div>
+        <h2>People who create the web page for this project:</h2>
+        <br />
+
+        <p2>Katya Salata</p2>
+        <br />
+        <p3>Shayna Barclay</p3>
+        <br />
+        <p4>Anna Turek</p4>
+        <br />
       </div>
     </div>
   );
