@@ -42,7 +42,7 @@ export const AddForm = ({ animals, setAnimals }) => {
     try {
       // Send to backend
       const response = await axios.post(
-        "http://localhost:5005/cats",
+        `${API_URL}/posts`,
         newAnimal
       );
 

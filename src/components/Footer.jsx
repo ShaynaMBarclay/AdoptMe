@@ -5,6 +5,7 @@ const Footer = () => {
       <a href="#">Find a friend</a>
       <a href="#">About us</a>
       <a href="#">Contacts</a>
+      <span className="copyright">Copyright © 2024 AdoptMe</span>
     </div>
   );
 };
