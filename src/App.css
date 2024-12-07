@@ -26,7 +26,7 @@ body {
   background-color: rgba(36, 169, 40, 0.1);
   height: 90px;
   border-radius: 8px;
-  position: sticky;
+
   top: 0;
   z-index: 9999;
   transition: height 0.3s ease, padding 0.3s ease;
@@ -51,7 +51,7 @@ body {
   transition: font-size 0.3s ease;
 }
 
-/* When Navbar is Scrolled */
+/* When Navbar is Scrolled (Please do not delete)
 .navbar.scrolled {
   height: 60px;
   padding: 5px 10px;
@@ -67,7 +67,7 @@ body {
 
 .navbar.scrolled .navbar-links {
   gap: 10px;
-}
+} */
 
 /* Navbar Links Styling */
 .navbar-links {
@@ -271,14 +271,14 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 90%; /* Adjust width for responsiveness */
-  max-width: 500px; /* Set a max width */
-  height: auto; /* Automatically adjust height */
-  max-height: 90%; /* Limit the height to 90% of the screen */
+  max-width: 500px; 
+  height: auto; 
+  max-height: 70%; 
   background-color: white;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
   padding: 20px;
-  overflow-y: auto; /* Add vertical scroll if content overflows */
+  overflow-y: auto; 
   box-sizing: border-box; /* Include padding in width/height calculations */
   z-index: 1000; /* Ensure it appears above other elements */
 }

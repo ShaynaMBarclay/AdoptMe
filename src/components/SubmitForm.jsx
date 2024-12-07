@@ -84,7 +84,7 @@ const SubmitForm = ({ closeModal }) => {
       closeModal();
     }
     navigate("/"); //navigate to the homescreen    
-  }, 9000); //9 second delay
+  }, 7000); //7 second delay
 };
 
 
@@ -197,28 +197,13 @@ const SubmitForm = ({ closeModal }) => {
       </div>
     </form>
 
-<div className="submissions-container">
-<h2>Submissions</h2>
-{submissions.length === 0 ? (
-  <p>No submissions yet.</p>
+<div className="submissions-confirmation">
+{success ? (
+  <p style={{ color: "green", fontSize: "1.2em"}}>
+    We will contact you within next 2 weeks after submission.
+    </p>
 ) : (
-  submissions.map((submission, index) => (
-    <div key={index} className="submission-entry">
-      <p>
-        <strong>Name:</strong> {submission.name}
-      </p>
-      <p>
-        <strong>Email:</strong> {submission.email}
-      </p>
-      <p>
-        <strong>Address:</strong> {submission.address}, {submission.city}, {submission.zipCode}, {submission.country}
-      </p>
-      <p>
-        <strong>Phone:</strong> {submission.phone}
-      </p>
-      <hr />
-    </div>
-  ))
+  <p>No submissions yet. Please fill out the form above</p>
 )}
 </div>
 </>
