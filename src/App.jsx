@@ -10,29 +10,21 @@ import Navbar from "./components/Navbar";
 import SubmitForm from "./components/SubmitForm";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { API_URL } from "../src/config/apiConfig";
+
 
 function App() {
   const [animals, setAnimals] = useState([]);
 
   useEffect(() => {
     axios
-      .get("http://localhost:5005/cats")
+    .get(`${API_URL}/posts`)
       .then((res) => {
         console.log(res);
         setAnimals(res.data.reverse());
       })
       .catch((err) => console.log(err));
   }, []);
-
-  // const handleAddAnimal = async (newAnimal) => {
-  //   const newAnimals = await axios.post("http://localhost:5005/cats", newAnimal)
-  //   console.log("New Animals", newAnimals)
-  //   setAnimals((prevAnimals) => {
-  //     const updatedAnimals = [...prevAnimals];
-  //     updatedAnimals.unshift(newAnimal); // Add new animal at the start
-  //     return updatedAnimals;
-  //   });
-  // };
 
   return (
     <>
