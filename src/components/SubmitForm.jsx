@@ -175,7 +175,7 @@ const SubmitForm = ({ closeModal }) => {
           />
         </div>
         <div>
-          <button type="submit">Submit</button>
+          <button className="submit-button">Submit</button>
         </div>
       </div>
     </form>
