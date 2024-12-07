@@ -10,6 +10,8 @@ import Navbar from "./components/Navbar";
 import SubmitForm from "./components/SubmitForm";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Chatbot from 'react-chatbot-kit'
+import 'react-chatbot-kit/build/main.css'
 
 function App() {
   const [animals, setAnimals] = useState([]);
