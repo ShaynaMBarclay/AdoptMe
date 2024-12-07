@@ -17,8 +17,9 @@ function App() {
   const [animals, setAnimals] = useState([]);
 
   useEffect(() => {
+    console.log(API_URL)
     axios
-    .get(`${API_URL}/posts`)
+    .get(`${API_URL}/cats`)
       .then((res) => {
         console.log(res);
         setAnimals(res.data.reverse());
