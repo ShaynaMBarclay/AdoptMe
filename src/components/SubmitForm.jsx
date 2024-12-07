@@ -4,8 +4,6 @@ import { useNavigate } from "react-router-dom";
 const SubmitForm = ({ closeModal }) => {
   const [name, setName] = useState("");
   const [surname, setSurname] = useState("");
-  // const [address, setAddress] = useState("");
-  // const [zipCode, setZipCode] = useState("");
   const [city, setCity] = useState("");
   const [country, setCountry] = useState("");
   const [phone, setPhone] = useState("");
@@ -23,12 +21,6 @@ const SubmitForm = ({ closeModal }) => {
   const handleSurnameChange = (e) => {
     setSurname(e.target.value);
   };
-  // const handleAddressChange = (e) => {
-  //   setAddress(e.target.value);
-  // };
-  // const handleZipCodeChange = (e) => {
-  //   setZipCode(e.target.value);
-  // };
   const handleCityChange = (e) => {
     setCity(e.target.value);
   };
@@ -52,9 +44,7 @@ const SubmitForm = ({ closeModal }) => {
     const newSubmission = {
       name,
       email,
-      // zipCode,
       surname,
-      // address,
       city,
       country,
       phone,
@@ -67,8 +57,6 @@ const SubmitForm = ({ closeModal }) => {
     // Reset form and close the modal
     setName("");
     setSurname("");
-    // setAddress("");
-    // setZipCode("");
     setCity("");
     setCountry("");
     setPhone("");
@@ -120,30 +108,6 @@ const SubmitForm = ({ closeModal }) => {
               placeholder="*"
             />
           </div>
-          {/* <div>
-          <label className="submit-address" htmlFor="address">
-            Address:
-          </label>
-          <input
-            type="text"
-            id="address"
-            value={address}
-            onChange={handleAddressChange}
-            placeholder="*"
-          />
-        </div>
-        <div>
-          <label className="submit-zipCode" htmlFor="zipCode">
-            ZipCode:
-          </label>
-          <input
-            type="text"
-            id="zipCode"
-            value={zipCode}
-            onChange={handleZipCodeChange}
-            placeholder="*"
-          />
-        </div> */}
           <div>
             <label className="submit-city" htmlFor="city">
               City:
