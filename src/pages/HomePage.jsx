@@ -1,20 +1,19 @@
-import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useState } from "react";
 import Card from "../components/Card";
+import Filter from "../components/Filter"; // Import the filter component
 
-const HomePage = ({animals}) => {
-  const location = useLocation(); // To capture navigation state
-
-  // useEffect(() => {
-  //   if (location.state?.refresh) {
-  //     fetchAnimals();
-  //   }
-  // }, [location.state]);
+const HomePage = ({ animals }) => {
+  // State to hold filtered data
+  const [filteredAnimals, setFilteredAnimals] = useState(animals);
 
   return (
-    <div className="home-page">
+    <div className="homepage">
+      {/* Include the Filter component */}
+      <Filter originalData={animals} setData={setFilteredAnimals} />
+
+      {/* Animal cards display */}
       <div className="card-container">
-        { animals && animals.map((animal) => (
+        {filteredAnimals.map((animal) => (
           <Card key={animal.id} animal={animal} />
         ))}
       </div>
@@ -23,3 +22,11 @@ const HomePage = ({animals}) => {
 };
 
 export default HomePage;
+
+// const location = useLocation(); // To capture navigation state
+
+// useEffect(() => {
+//   if (location.state?.refresh) {
+//     fetchAnimals();
+//   }
+// }, [location.state]);

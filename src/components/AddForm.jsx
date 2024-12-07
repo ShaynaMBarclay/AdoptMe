@@ -13,8 +13,8 @@ export const AddForm = ({ animals, setAnimals }) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const navigate = useNavigate();
 
+  const navigate = useNavigate();
 
   // Handle image URL updates
   const handleImageChange = (index, value) => {
@@ -50,7 +50,6 @@ export const AddForm = ({ animals, setAnimals }) => {
       setAnimals([response.data, ...animals]);
 
       navigate("/");
-      
 
       // Reset form fields
       setName("");
@@ -101,7 +100,7 @@ export const AddForm = ({ animals, setAnimals }) => {
         onChange={(e) => setSpecies(e.target.value)}
         required
       />
-            <div>
+      <div>
         <label>
           <input
             type="checkbox"

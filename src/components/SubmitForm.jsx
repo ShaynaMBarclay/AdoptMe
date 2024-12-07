@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const SubmitForm = ({ closeModal }) => {
   const [name, setName] = useState("");
@@ -10,6 +11,10 @@ const SubmitForm = ({ closeModal }) => {
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
+  const [success, setSuccess] = useState(false);
+  const [submissions, setSubmissions] = useState([]);
+  
+  const navigate = useNavigate(); //for navigation
 
   const handleNameChange = (e) => {
     setName(e.target.value);
@@ -41,10 +46,10 @@ const SubmitForm = ({ closeModal }) => {
     e.preventDefault();
 
     if (!name || !email) {
-      setError("");
+      setError("Name and email are required.");
       return;
     }
-    const newPerson = {
+    const newSubmission = {
       name,
       email,
       zipCode,
@@ -54,7 +59,10 @@ const SubmitForm = ({ closeModal }) => {
       country,
       phone,
     };
-    console.log("Send data:", newPerson);
+    console.log("Send data:", newSubmission);
+
+     // Store the new submission in the array
+     setSubmissions((prevSubmissions) => [...prevSubmissions, newSubmission]);
 
     // Reset form and close the modal
     setName("");
@@ -66,16 +74,25 @@ const SubmitForm = ({ closeModal }) => {
     setPhone("");
     setEmail("");
     setError("");
+    setSuccess(true); // Success notification
 
-    // Close the modal after submission
+       // Simulate a small delay for notification display
+       setTimeout(() => {
+        setSuccess(false); // Hide success notification
+        // Close the modal after submission
     if (closeModal) {
       closeModal();
     }
-  };
+    navigate("/"); //navigate to the homescreen    
+  }, 7000); //7 second delay
+};
+
 
   return (
+    <>
     <form onSubmit={handleSubmit}>
       {error && <p style={{ color: "red" }}>{error}</p>}
+      {success && <p style={{ color: "green" }}>Form submitted successfully!</p>}
       <div className="form-container">
         <div>
           <label className="submit-name" htmlFor="name">
@@ -179,6 +196,17 @@ const SubmitForm = ({ closeModal }) => {
         </div>
       </div>
     </form>
+
+<div className="submissions-confirmation">
+{success ? (
+  <p style={{ color: "green", fontSize: "1.2em"}}>
+    We will contact you within next 2 weeks after submission.
+    </p>
+) : (
+  <p>No submissions yet. Please fill out the form above</p>
+)}
+</div>
+</>
   );
 };
 

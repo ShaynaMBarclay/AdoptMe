@@ -1,13 +1,15 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
 }
 
 main {
   color: #ddd;
   background-color: rgb(68, 66, 66, 0.5);
+  min-height: 100vw;
+  display: flex;
+  flex-direction: column;
 }
 
 body {
@@ -24,7 +26,7 @@ body {
   background-color: rgba(36, 169, 40, 0.1);
   height: 90px;
   border-radius: 8px;
-  position: sticky;
+
   top: 0;
   z-index: 9999;
   transition: height 0.3s ease, padding 0.3s ease;
@@ -49,7 +51,7 @@ body {
   transition: font-size 0.3s ease;
 }
 
-/* When Navbar is Scrolled */
+/* When Navbar is Scrolled (Please do not delete)
 .navbar.scrolled {
   height: 60px;
   padding: 5px 10px;
@@ -65,7 +67,7 @@ body {
 
 .navbar.scrolled .navbar-links {
   gap: 10px;
-}
+} */
 
 /* Navbar Links Styling */
 .navbar-links {
@@ -115,6 +117,20 @@ body {
   .navbar.scrolled .logo {
     height: 60px;
   }
+}
+
+/* Homepage */
+.homepage {
+  display: flex;
+}
+
+.homepage-filters {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 200px;
+  margin: 10px;
+  text-align: left;
 }
 
 /* card on homepage */
@@ -204,7 +220,7 @@ body {
 }
 
 .thumbnail.active {
-  border: 2px solid blue; /* Indicate active thumbnail */
+  border: 2px solid rgb(174, 174, 212); /* Indicate active thumbnail */
 }
 
 .thumbnail:hover {
@@ -257,17 +273,33 @@ body {
   color: #2c312b;
 }
 /* Modal/Pop up Screen */
+
 .modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%; /* Adjust width for responsiveness */
+  max-width: 500px; 
+  height: auto; 
+  max-height: 70%; 
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 20px;
+  overflow-y: auto; 
+  box-sizing: border-box; /* Include padding in width/height calculations */
+  z-index: 1000; /* Ensure it appears above other elements */
+}
+
+.modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.5); /* Add a dimmed background */
+  z-index: 999; /* Behind the modal */
 }
 
 /* Modal content */
@@ -298,11 +330,11 @@ body {
 /*Footer */
 
 .footer {
-  position: sticky;
-  bottom: 0;
-  left: 0;
+  align-self: flex-end;
+  /* bottom: 0;
+  left: 0; */
   width: 100%;
-  background-color: rgb(91, 169, 65);
+  background-color: rgb(91, 169, 65, 0.8);
   color: white;
   text-align: center;
   padding: 15px 0;

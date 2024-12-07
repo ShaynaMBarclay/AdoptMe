@@ -35,22 +35,29 @@ function App() {
   // };
 
   return (
-    <main>
-      <Navbar className="navbar" />
-      <Routes>
-        <Route path="/" element={<HomePage animals={animals} />} />
-        <Route
-          path="/add-animal"
-          element={<AddAnimalPage animals={animals} setAnimals={setAnimals} />}
-        />
-        <Route path="/details/:cardId" element={<DetailsPage animals={animals} setAnimals={setAnimals} />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/submitForm" element={<SubmitForm />} />
+    <>
+      <main>
+        <Navbar className="navbar" />
+        <Routes>
+          <Route path="/" element={<HomePage animals={animals} />} />
+          <Route
+            path="/add-animal"
+            element={
+              <AddAnimalPage animals={animals} setAnimals={setAnimals} />
+            }
+          />
+          <Route
+            path="/details/:cardId"
+            element={<DetailsPage animals={animals} setAnimals={setAnimals} />}
+          />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/submitForm" element={<SubmitForm />} />
 
-        <Route path="*" element={<NotFoundPage />} />
-      </Routes>
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }
 
