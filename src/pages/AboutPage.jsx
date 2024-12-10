@@ -34,8 +34,14 @@ const AboutPage = () => {
           about the pet.
           <p>Thanks for helping🙏</p>
         </p>
-
-        <h2>People who create the web page for this project:</h2>
+        <h2>CONTACT US</h2>
+        <p>
+          🖃 AdoptMe@FakeEmail.com
+          <br />
+          🕻 00000000 <br />
+          Ask the chatbot on the Home Page! <br />
+        </p>
+        <p1>People who worked on this project:</p1>
         <br />
 
         <p2>Katya Salata</p2>
