@@ -129,7 +129,9 @@ body {
   min-height: 200px;
   height: 200px;
   margin: 10px;
-  width: 110%;
+  min-width: 120px;
+  width: 120px;
+  font-size: 18px;
   text-align: left;
 }
 
