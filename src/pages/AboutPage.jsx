@@ -18,7 +18,14 @@ const AboutPage = () => {
           <br /> Simply go to the "Add Animal" section from the homepage and
           fill in all the required information about the pet.
         </p>
-        <p1>People who works on this project:</p1>
+        <h2>CONTACT US</h2>
+        <p>
+        🖃 AdoptMe@FakeEmail.com 
+        <br />
+        🕻 00000000 <br />
+        Ask the chatbot on the Home Page! <br />
+        </p>
+        <p1>People who worked on this project:</p1>
         <br />
         <p2>Katya Salata </p2>
         <br />

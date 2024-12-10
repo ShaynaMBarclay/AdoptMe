@@ -69,8 +69,13 @@ export const AddForm = ({ animals, setAnimals }) => {
   };
 
   return (
+    <div className="form-container">
+    <h2>Add Animal</h2>
+
+    {error && <p className="error-message">{error}</p>}
+
     <form onSubmit={handleSubmit}>
-      <h2>Add Animal</h2>
+
 
       {error && <p style={{ color: "red" }}>{error}</p>}
 
@@ -104,7 +109,7 @@ export const AddForm = ({ animals, setAnimals }) => {
       />
       <input
         type="text"
-        placeholder="Location" // New input field for location
+        placeholder="Location"
         value={petLocation}
         onChange={(e) => setPetLocation(e.target.value)}
         required
@@ -129,6 +134,7 @@ export const AddForm = ({ animals, setAnimals }) => {
           Sterilized
         </label>
       </div>
+
       <h3>Images (Add up to 5 URLs)</h3>
       {images.map((image, index) => (
         <input
@@ -145,5 +151,6 @@ export const AddForm = ({ animals, setAnimals }) => {
         {loading ? "Adding Animal..." : "Add Animal"}
       </button>
     </form>
+    </div>
   );
 };
