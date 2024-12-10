@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-
+  const imgSrc =
+    "https://res.cloudinary.com/dmvawq2ak/image/upload/v1733854128/NewLogo_oeuisq.png";
   // use effect to detect scroll events
   useEffect(() => {
     const handleScroll = () => {
@@ -25,11 +26,7 @@ const Navbar = () => {
     <nav className={`navbar ${isScrolled ? "scrolled" : ""}`}>
       <div className="navbar-logo">
         <Link to="/">
-          <img
-            src="/src/components/NewLogo.png"
-            alt="AdoptMe Logo"
-            className="logo"
-          />
+          <img src={imgSrc} alt="AdoptMe Logo" className="logo" />
         </Link>
         <h1 className="navbar-title">AdoptMe</h1>
       </div>

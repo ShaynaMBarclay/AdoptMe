@@ -6,7 +6,7 @@
 
 main {
   color: #000000;
-  background-color: rgb(255, 229, 182, 0.8);
+  background-color: rgba(255, 229, 182, 0.884);
   display: flex;
   flex-direction: column;
 }
@@ -125,6 +125,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  min-height: 200px;
   height: 200px;
   margin: 10px;
   text-align: left;
@@ -141,8 +142,9 @@ body {
 }
 
 .card {
-  flex: 1 1 calc(33.333% - 20px); /* Each card takes up 1/3 of the row, minus gap */
+  flex: 1 1 calc(33.333% - 20px); /* 3 cards per row */
   max-width: calc(33.333% - 20px);
+  min-height: 700px; /* Fixed height for larger screens */
   box-sizing: border-box;
   background-color: rgb(255, 255, 255);
   border-radius: 8px;
@@ -150,6 +152,9 @@ body {
   text-align: center;
   cursor: pointer;
   transition: transform 0.2s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Make sure content is evenly spaced */
 }
 
 .card:hover {
@@ -161,6 +166,25 @@ body {
   height: 70%;
   border-radius: 8px;
   object-fit: cover;
+}
+/* Responsive design for smaller screens */
+
+/* For medium screens (tablets) */
+@media (max-width: 768px) {
+  .card {
+    flex: 1 1 calc(50% - 20px); /* 2 cards per row */
+    max-width: calc(50% - 20px);
+    min-height: 500px; /* Adjust height for medium screens */
+  }
+}
+
+/* For smaller screens (phones) */
+@media (max-width: 480px) {
+  .card {
+    flex: 1 1 100%; /* 1 card per row */
+    max-width: 100%;
+    min-height: 400px; /* Adjust height for small screens */
+  }
 }
 
 /*Details Page*/
@@ -255,18 +279,96 @@ body {
   background-color: white;
   box-sizing: border-box;
 }
-.submit-button {
-  color: #270404;
-  position: center;
-  padding-left: 10px;
-  margin-top: 20px;
-  margin-left: 200px;
-  height: 30px;
+.form-container input:focus,
+.form-container button:focus {
+  outline: none;
+  border-color: #507231;
+}
+.form-container input[type="text"],
+.form-container input[type="number"] {
+  background-color: #f1f1f1;
+}
+.form-container input[type="text"]:focus,
+.form-container input[type="number"]:focus {
+  background-color: #fff;
+}
+.form-container button {
+  background-color: #507231;
+  color: white;
+  border: none;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-.button {
-  color: #2c312b;
+.form-container button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.form-container button:hover:not(:disabled) {
+  background-color: #3d5a2d;
+}
+
+/* Labels and Checkbox Styling */
+.form-container label {
+  font-size: 18px;
+  color: #0a0101;
+  display: inline-flex;
+  align-items: center;
+}
+.form-container input[type="checkbox"] {
+  margin-top: 2px;
+}
+
+.form-container div {
+  margin-bottom: 11px;
+}
+
+.form-container .checkbox-group {
+  display: flex;
+  gap: 20px;
+  margin-top: 11px;
+  align-items: center;
+}
+
+.form-container .checkbox-group label {
+  font-size: 16px;
+  color: #507231;
+  display: flex;
+  align-items: center;
+}
+
+.form-container h3 {
+  font-size: 1.2rem;
+  color: #507231;
+  margin-top: 20px;
+}
+
+/* Error Message */
+.form-container .error-message {
+  color: red;
+  font-size: 1rem;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.submit-button {
+  background-color: #507231;
+  color: #fff;
+  font-size: 1.2rem;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-top: 20px;
+  display: block;
+  width: 100%;
+}
+
+.submit-button:hover {
+  background-color: #3e5e28;
+  transform: scale(1.05);
 }
 /* Modal/Pop up Screen */
 
@@ -284,8 +386,9 @@ body {
   border-radius: 10px;
   padding: 20px;
   overflow-y: auto;
-  box-sizing: border-box; /* Include padding in width/height calculations */
-  z-index: 1000; /* Ensure it appears above other elements */
+  box-sizing: border-box;
+  z-index: 1000;
+  box-sizing: border-box;
 }
 
 .modal-overlay {
@@ -294,8 +397,8 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Add a dimmed background */
-  z-index: 999; /* Behind the modal */
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
 }
 
 /* Modal content */
@@ -321,6 +424,23 @@ body {
 
 .close:hover {
   color: black;
+}
+
+/* Responsive styling: when the screen is smaller than 500px */
+@media (max-width: 500px) {
+  .modal {
+    width: 90%;
+    max-width: 100%;
+    padding: 10px;
+  }
+
+  .modal-content {
+    font-size: 0.9rem;
+  }
+
+  .close {
+    font-size: 24px;
+  }
 }
 
 /*Footer */
