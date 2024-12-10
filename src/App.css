@@ -125,6 +125,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  min-height: 200px;
   height: 200px;
   width: 110%;
   margin: 10px;

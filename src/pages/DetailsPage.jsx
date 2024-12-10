@@ -110,6 +110,9 @@ function DetailsPage({animals, setAnimals}) {
         <strong>Sterilized:</strong> {animal.sterilisation ? "Yes" : "No"}
       </p>
       <p>{animal.description}</p>
+      <p>
+        <strong>Location:</strong> {animal.location}
+          </p>
 
       </>
       ) : (
@@ -138,6 +141,15 @@ function DetailsPage({animals, setAnimals}) {
          setEditedAnimal({ ...editedAnimal, age: e.target.value })
        }
      />
+      <input
+      type="text"
+      placeholder="Location"
+      value={editedAnimal.location || ""}
+       onChange={(e) =>
+      setEditedAnimal({ ...editedAnimal, location: e.target.value })
+       }
+     />
+
      <label>
        <input
          type="checkbox"
