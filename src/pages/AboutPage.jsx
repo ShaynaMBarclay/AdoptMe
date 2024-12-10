@@ -1,18 +1,21 @@
 import { Link } from "react-router-dom";
 const AboutPage = () => {
   return (
-    <div className="p1">
+    <>
       <h1>What is Adopt Me and what do we do?</h1>
-      <p1>
-        Adopt Me is a non-profit project aimed at systematically solving the
-        problem of homeless animals in humane ways. Thanks to the Free Online
-        resource, you can find a pet or help a homeless animal find its family.
-      </p1>
-      <img
-        src="https://res.cloudinary.com/dmvawq2ak/image/upload/v1733423691/bve084bq0djpdr9laled.png"
-        alt="About Page"
-      />
-
+      <div className="p1">
+        <img
+          src="https://res.cloudinary.com/dmvawq2ak/image/upload/v1733423691/bve084bq0djpdr9laled.png"
+          alt="About Page"
+        />
+        <p>
+          Adopt Me is a non-profit project aimed at systematically solving the
+          problem of homeless animals in humane ways. Thanks to the Free Online
+          resource, you can find a pet or help a homeless animal find its
+          family.
+        </p>
+      </div>
+      <h1>How it's work?</h1>
       <div className="about">
         <p>
           This is a project that allows anyone to help our smaller brothers.
@@ -30,28 +33,54 @@ const AboutPage = () => {
           <Link to="/add-animal" className="add-animal-page">
             Add Animal Page
           </Link>
+          <br />
           section from the homepage and fill in all the required information
           about the pet.
-          <p>Thanks for helping🙏</p>
         </p>
-        <h2>CONTACT US</h2>
-        <p>
-          🖃 AdoptMe@FakeEmail.com
-          <br />
-          🕻 00000000 <br />
-          Ask the chatbot on the Home Page! <br />
-        </p>
-        <p1>People who worked on this project:</p1>
-        <br />
-
-        <p2>Katya Salata</p2>
-        <br />
-        <p3>Shayna Barclay</p3>
-        <br />
-        <p4>Anna Turek</p4>
-        <br />
+        <img
+          src="https://res.cloudinary.com/dmvawq2ak/image/upload/v1733177827/simona1_blfyoz.jpg"
+          alt="About Page"
+        />
       </div>
-    </div>
+      <h1>Our mission</h1>
+      <div className="mission">
+        <img
+          src="https://res.cloudinary.com/dmvawq2ak/image/upload/v1733255658/Lypa1_c1vr2u.jpg"
+          alt="About Page"
+        />
+        <p>
+          Increase the level of responsibility and respect of society for the
+          life of animals.
+        </p>
+      </div>
+
+      <h1>Our goal</h1>
+      <div className="goal">
+        <p>Every animal has a loving owner.</p>
+        <img
+          src="https://res.cloudinary.com/dmvawq2ak/image/upload/v1733564468/sofi_pbwfh7.jpg"
+          alt="About Page"
+        />
+      </div>
+      <h1>Thanks for helping🙏</h1>
+
+      <h2>CONTACT US</h2>
+      <p>
+        🖃 AdoptMe@FakeEmail.com
+        <br />
+        🕻 00000000 <br />
+        Ask the chatbot on the Home Page! <br />
+      </p>
+
+      <h2>People who create the web page for this project:</h2>
+      <br />
+
+      <p>Katya Salata</p>
+
+      <p>Shayna Barclay</p>
+
+      <p>Anna Turek</p>
+    </>
   );
 };
 
