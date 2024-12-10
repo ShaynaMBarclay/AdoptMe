@@ -55,7 +55,7 @@ function DetailsPage({animals, setAnimals}) {
     const handleSave = async () => {
       try {
         console.log(editedAnimal)
-        await axios.put(`http://localhost:5005/cats/${animal.id}`, editedAnimal);
+        await axios.put(`https://adoptme-backend.vercel.app/${animal.id}`, editedAnimal);
         alert("Animal details updated successfully.");
         setIsEditing(false);
         const mappedAnimals = animals.map((animalOne) => {

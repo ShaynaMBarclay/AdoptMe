@@ -43,7 +43,7 @@ export const AddForm = ({ animals, setAnimals }) => {
     try {
       // Send to backend
       const response = await axios.post(
-        `${API_URL}/cats`,
+        'https://adoptme-backend.vercel.app/',
         newAnimal
       );
 
