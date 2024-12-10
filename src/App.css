@@ -44,7 +44,7 @@ body {
   font-size: 60px;
   margin: 0;
   color: rgb(232, 240, 231);
-  -webkit-text-stroke: 2px rgb(91, 169, 65);
+  -webkit-text-stroke: 2px #1b3404; 
   transition: font-size 0.3s ease;
 }
 
@@ -119,6 +119,7 @@ body {
 /* Homepage */
 .homepage {
   display: flex;
+  gap: 20px;
 }
 
 .homepage-filters {
@@ -128,7 +129,14 @@ body {
   min-height: 200px;
   height: 200px;
   margin: 10px;
+  width: 110%;
   text-align: left;
+}
+
+
+.homepage-filters select
+{
+  width: 89.7px;
 }
 
 /* card on homepage */
@@ -136,9 +144,9 @@ body {
 .card-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 25px;
   justify-content: space-evenly;
-  padding: 10px;
+  padding: 20px;
 }
 
 .card {
@@ -240,7 +248,7 @@ body {
 }
 
 .thumbnail.active {
-  border: 2px solid rgb(174, 174, 212); /* Indicate active thumbnail */
+  border: 2px solid rgb(5, 142, 32); /* Indicate active thumbnail */
 }
 
 .thumbnail:hover {
@@ -250,48 +258,46 @@ body {
 /*Submit Form*/
 
 .form-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 30px;
   text-align: left;
 }
 
-.form-container div label {
-  color: #500202;
+.form-container h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #507231;
 }
 
-.form-container div input {
-  background-color: #057973;
-  padding: 5px;
-  width: 490px;
-  font-size: 1.4rem;
-}
-.form-group label {
-  font-size: 16px;
-  color: #0a0101;
-  margin-bottom: 5px;
-  display: block;
-}
-.form-group input {
+.form-container input,
+.form-container button {
   width: 100%;
   padding: 12px;
-  font-size: 16px;
+  margin: 10px 0;
+  font-size: 17px;
   border: 1px solid #ccc;
-  border-radius: 5px;
-  color: #110101;
-  background-color: white;
+  border-radius: 8px;
   box-sizing: border-box;
 }
+
 .form-container input:focus,
 .form-container button:focus {
   outline: none;
   border-color: #507231;
 }
+
 .form-container input[type="text"],
 .form-container input[type="number"] {
   background-color: #f1f1f1;
 }
+
 .form-container input[type="text"]:focus,
 .form-container input[type="number"]:focus {
   background-color: #fff;
 }
+
 .form-container button {
   background-color: #507231;
   color: white;
@@ -299,6 +305,7 @@ body {
   cursor: pointer;
   transition: background-color 0.3s;
 }
+
 
 .form-container button:disabled {
   background-color: #ccc;
@@ -377,10 +384,10 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 90%; /* Adjust width for responsiveness */
-  max-width: 500px;
+  width: 90vw;
+  max-width: 600px;
   height: auto;
-  max-height: 70%;
+  max-height: 80vh;
   background-color: white;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
@@ -390,6 +397,7 @@ body {
   z-index: 1000;
   box-sizing: border-box;
 }
+
 
 .modal-overlay {
   position: fixed;
@@ -404,12 +412,16 @@ body {
 /* Modal content */
 .modal-content {
   background-color: white;
-  padding: 20px;
+  padding: 10px 20px;
   border-radius: 10px;
-  width: 80%;
-  max-width: 500px;
+  width: 100%;
+  max-width: 600px;
+  box-sizing: border-box;
+  font-size: 1rem;
+  line-height: 1.5;
   text-align: center;
-  position: relative;
+  overflow-y: auto;
+  max-height: 100%;
 }
 
 /* Close button */
@@ -450,7 +462,7 @@ body {
   /* bottom: 0;
   left: 0; */
   width: 100%;
-  background-color: rgb(91, 169, 65, 0.8);
+  background-color: #507231;
   color: white;
   text-align: center;
   padding: 15px 0;
