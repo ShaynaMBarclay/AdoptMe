@@ -354,19 +354,17 @@ body {
 
 /*About Page */
 
-.about {
+.p1 {
   img {
     margin-top: 0px;
-    transform: scale(0.5); /* Scales the image to 50% of its original size */
+    margin-bottom: 200px;
+    margin-right: 50px;
+    transform: scale(0.4); /* Scales the image to 50% of its original size */
+    float: left;
   }
 }
 
-.p1 {
-  text-align: left;
-}
-
 .content {
-  display: flex;
   justify-content: space-between;
   align-items: center;
 }
