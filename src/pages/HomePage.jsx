@@ -2,7 +2,7 @@ import { useState } from "react";
 import Chatbot from 'react-chatbot-kit';
 import Card from "../components/Card";
 import Filter from "../components/Filter"; // Import the filter component
-import config from '../components/chatbot/config.js';
+import config from '../components/chatbot/config.jsx';
 import MessageParser from '../components/chatbot/MessageParser.jsx';
 import ActionProvider from '../components/chatbot/ActionProvider.jsx';
 
@@ -16,18 +16,57 @@ const HomePage = ({ animals }) => {
 
   return (
     <div>
-    {/* Toggle Chatbot Button */}
-    <button 
-      onClick={() => setShowChatbot((prev) => !prev)} 
-      style={{ position: "fixed", bottom: "20px", right: "20px", zIndex: 1000 }}
-    >
-      {showChatbot ? "Close Chatbot" : "Open Chatbot"}
-    </button>
+    {/* Toggle Chatbot Button Inline css because it was not working correctly in the App.css*/}
+      <img
+        src="/src/components/chatbot/chatbubble.png"
+        alt="Chat"
+        onClick={() => setShowChatbot((prev) => !prev)}
+        style={{
+          position: "fixed",
+          bottom: "20px",
+          right: "20px",
+          zIndex: 1000,
+          width: "50px", 
+          height: "50px",
+          cursor: "pointer",
+        }}
+      />
  
 
-    {/* Chatbot Overlay */}
+    {/* Chatbot Overlay and Inline css because it was not working correctly in the App.css*/}
     {showChatbot && (
-      <div className="chatbot-overlay">
+      <div 
+      style={{
+        position: "fixed",
+        bottom: "80px", 
+        right: "20px",
+        zIndex: 999, 
+        boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
+        borderRadius: "8px",
+        overflow: "hidden",
+        backgroundColor: "#fff",
+      }}
+    >
+        
+
+          {/* Close Button and some css */}
+          <button
+            onClick={() => setShowChatbot(false)}
+            style={{
+              position: "absolute",
+              top: "10px",
+              right: "10px",
+              background: "transparent",
+              border: "none",
+              fontSize: "16px",
+              fontWeight: "bold",
+              cursor: "pointer",
+              zIndex: 1001
+            }}
+          >
+            ✕
+          </button>
+
         <Chatbot
           config={config}
           messageParser={MessageParser}

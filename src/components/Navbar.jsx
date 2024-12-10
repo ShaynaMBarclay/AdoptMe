@@ -26,7 +26,7 @@ const Navbar = () => {
       <div className="navbar-logo">
         <Link to="/">
           <img
-            src="https://res.cloudinary.com/dmvawq2ak/image/upload/v1732981595/logonobackground_s3r9h2.png"
+            src="/src/components/NewLogo.png"
             alt="AdoptMe Logo"
             className="logo"
           />
