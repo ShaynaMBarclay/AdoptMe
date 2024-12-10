@@ -68,6 +68,17 @@ export const AddForm = ({ animals, setAnimals }) => {
     }
   };
 
+   // Handle animal deletion
+  const handleDelete = async (id) => {
+    try {
+      await axios.delete(`https://adoptme-backend.vercel.app/cats/${id}`);
+      setAnimals(animals.filter((animal) => animal.id !== id)); // Remove from state
+    } catch (error) {
+      console.error("Failed to delete the animal:", error);
+      setError("Failed to delete the animal. Please try again.");
+    }
+  };
+
   return (
     <div className="form-container">
     <h2>Add Animal</h2>
@@ -145,12 +156,13 @@ export const AddForm = ({ animals, setAnimals }) => {
           onChange={(e) => handleImageChange(index, e.target.value)}
         />
       ))}
-
-      {/* Disable the submit button and show loading text while submitting */}
-      <button type="submit" disabled={loading}>
-        {loading ? "Adding Animal..." : "Add Animal"}
-      </button>
-    </form>
+              <button type="submit" disabled={loading}>
+          {loading ? "Adding Animal..." : "Add Animal"}
+        </button>
+      </form>
     </div>
   );
 };
+
+
+  

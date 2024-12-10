@@ -31,7 +31,7 @@ function DetailsPage({animals, setAnimals}) {
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`${API_URL}/cats)${animal.id}`);
+      await axios.delete(`https://adoptme-backend.vercel.app/cats/${animal.id}`);
       alert("Animal deleted successfully.");
       const filteredAnimals = animals.filter((animalOne) => {
         if (animalOne.id == editedAnimal.id){
@@ -55,7 +55,7 @@ function DetailsPage({animals, setAnimals}) {
     const handleSave = async () => {
       try {
         console.log(editedAnimal)
-        await axios.put(`https://adoptme-backend.vercel.app/cats${animal.id}`, editedAnimal);
+        await axios.put(`https://adoptme-backend.vercel.app/cats/${animal.id}`, editedAnimal);
         alert("Animal details updated successfully.");
         setIsEditing(false);
         const mappedAnimals = animals.map((animalOne) => {
