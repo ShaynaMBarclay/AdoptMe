@@ -72,7 +72,7 @@ const SubmitForm = ({ closeModal }) => {
         closeModal();
       }
       navigate("/"); //navigate to the homescreen
-    }, 7000); //7 second delay
+    }, 5000); //5 second delay
   };
 
   return (
