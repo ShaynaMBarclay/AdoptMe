@@ -31,7 +31,7 @@ function DetailsPage({animals, setAnimals}) {
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`${API_URL}/posts)${animal.id}`);
+      await axios.delete(`${API_URL}/cats)${animal.id}`);
       alert("Animal deleted successfully.");
       const filteredAnimals = animals.filter((animalOne) => {
         if (animalOne.id == editedAnimal.id){

@@ -10,9 +10,9 @@ export const AddForm = ({ animals, setAnimals }) => {
   const [images, setImages] = useState(["", "", "", "", ""]);
   const [vaccination, setVaccination] = useState(false);
   const [sterilisation, setSterilisation] = useState(false);
+  const [petLocation, setPetLocation] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-
 
   const navigate = useNavigate();
 
@@ -34,6 +34,7 @@ export const AddForm = ({ animals, setAnimals }) => {
       description,
       age: parseFloat(age),
       species,
+      petLocation,
       vaccination,
       sterilisation,
       images: images.filter((img) => img.trim() !== ""), // Filter out empty URLs
@@ -42,7 +43,7 @@ export const AddForm = ({ animals, setAnimals }) => {
     try {
       // Send to backend
       const response = await axios.post(
-        `${API_URL}/posts`,
+        `${API_URL}/cats`,
         newAnimal
       );
 
@@ -56,6 +57,7 @@ export const AddForm = ({ animals, setAnimals }) => {
       setDescription("");
       setAge("");
       setSpecies("");
+      setPetLocation("");
       setImages(["", "", "", "", ""]);
       setVaccination(false);
       setSterilisation(false);
@@ -98,6 +100,13 @@ export const AddForm = ({ animals, setAnimals }) => {
         placeholder="Species"
         value={species}
         onChange={(e) => setSpecies(e.target.value)}
+        required
+      />
+      <input
+        type="text"
+        placeholder="Location" // New input field for location
+        value={petLocation}
+        onChange={(e) => setPetLocation(e.target.value)}
         required
       />
       <div>
