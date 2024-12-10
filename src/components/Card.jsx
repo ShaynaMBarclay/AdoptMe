@@ -18,7 +18,7 @@ const Card = ({ animal }) => {
       )}
       <h3>{animal.name}</h3>
       <p>Age: {animal.age}</p>
-      <p> 📍{animal.petLocation}</p>
+      <p> 📍{animal.location}</p>
     </div>
   );
 };

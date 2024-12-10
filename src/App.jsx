@@ -10,6 +10,7 @@ import Navbar from "./components/Navbar";
 import SubmitForm from "./components/SubmitForm";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import 'react-chatbot-kit/build/main.css'
 import { API_URL } from "../src/config/apiConfig";
 
 
