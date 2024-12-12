@@ -53,7 +53,6 @@ const AboutPage = () => {
           life of animals.
         </p>
       </div>
-
       <h1>Our goal</h1>
       <div className="goal">
         <p>Every animal has a loving owner.</p>
@@ -75,11 +74,9 @@ const AboutPage = () => {
       <h2>People who create the web page for this project:</h2>
       <br />
 
-      <p>Katya Salata</p>
-
-      <p>Shayna Barclay</p>
-
-      <p>Anna Turek</p>
+      <p>KATYA SALATA</p>
+      <p>SHAYNA BARCLAY</p>
+      <p>ANNA TUREK</p>
     </>
   );
 };
