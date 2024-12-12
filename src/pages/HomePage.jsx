@@ -74,13 +74,22 @@ const HomePage = ({ animals }) => {
       )}
       <div className="homepage">
         {/* Include the Filter component */}
+<<<<<<< HEAD
         <Filter originalData={animals} setData={setFilteredAnimals} />
 
+=======
+        <div className="homepage-filters">
+          <Filter originalData={animals} setData={setFilteredAnimals} />
+        </div>
+>>>>>>> main
         {/* Animal cards display */}
-        <div className="card-container">
-          {filteredAnimals.map((animal) => (
-            <Card key={animal.id} animal={animal} />
-          ))}
+        <div>
+          <h1 className="navbar-title">AdoptMe</h1>
+          <div className="card-container">
+            {filteredAnimals.map((animal) => (
+              <Card key={animal.id} animal={animal} />
+            ))}
+          </div>
         </div>
       </div>
     </div>
