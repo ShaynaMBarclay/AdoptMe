@@ -6,6 +6,7 @@ import config from "../components/chatbot/config.jsx";
 import MessageParser from "../components/chatbot/MessageParser.jsx";
 import ActionProvider from "../components/chatbot/ActionProvider.jsx";
 
+
 const HomePage = ({ animals }) => {
   // State to hold filtered data
   const [filteredAnimals, setFilteredAnimals] = useState(animals);
