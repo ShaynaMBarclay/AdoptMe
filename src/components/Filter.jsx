@@ -25,36 +25,44 @@ const Filter = ({ originalData, setData }) => {
   }, [species, special, sterilised, vaccinated, originalData]);
 
   return (
-    <div className="homepage-filters">
-      <select onChange={(e) => setSpecies(e.target.value)} value={species}>
-        <option value="">All Species</option>
-        <option value="cat">Cat</option>
-        <option value="dog">Dog</option>
-      </select>
-      <label>
-        <input
-          type="checkbox"
-          checked={special}
-          onChange={(e) => setSpecial(e.target.checked)}
-        />
-        Special
-      </label>
-      <label>
-        <input
-          type="checkbox"
-          checked={sterilised}
-          onChange={(e) => setSterilised(e.target.checked)}
-        />
-        Sterilised
-      </label>
-      <label>
-        <input
-          type="checkbox"
-          checked={vaccinated}
-          onChange={(e) => setVaccinated(e.target.checked)}
-        />
-        Vaccinated
-      </label>
+    <div className="filter-container">
+      <div className="filter-item">
+        <select onChange={(e) => setSpecies(e.target.value)} value={species}>
+          <option value="">All Species</option>
+          <option value="cat">Cat</option>
+          <option value="dog">Dog</option>
+        </select>
+      </div>
+      <div className="filter-item">
+        <label>
+          <input
+            type="checkbox"
+            checked={special}
+            onChange={(e) => setSpecial(e.target.checked)}
+          />
+          Special
+        </label>
+      </div>
+      <div className="filter-item">
+        <label>
+          <input
+            type="checkbox"
+            checked={sterilised}
+            onChange={(e) => setSterilised(e.target.checked)}
+          />
+          Sterilised
+        </label>
+      </div>
+      <div className="filter-item">
+        <label>
+          <input
+            type="checkbox"
+            checked={vaccinated}
+            onChange={(e) => setVaccinated(e.target.checked)}
+          />
+          Vaccinated
+        </label>
+      </div>
     </div>
   );
 };

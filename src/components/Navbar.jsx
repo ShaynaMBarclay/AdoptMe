@@ -28,7 +28,7 @@ const Navbar = () => {
         <Link to="/">
           <img src={imgSrc} alt="AdoptMe Logo" className="logo" />
         </Link>
-        <h1 className="navbar-title">AdoptMe</h1>
+        {/* <h1 className="navbar-title">AdoptMe</h1> */}
       </div>
 
       <div className="navbar-links">
