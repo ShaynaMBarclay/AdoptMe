@@ -488,7 +488,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #025717;
 }
 .p1 img {
   height: 400px;
@@ -516,6 +515,11 @@ body {
   margin-top: 30px;
   color: #025717;
 }
+
+.about-text-column {
+  display: flex;
+  flex-direction: column;
+}
 .about img {
   height: 500px;
   margin-right: 60px;
@@ -525,10 +529,13 @@ body {
   width: 50%;
   font-size: 25px;
 }
+
 .about content {
   justify-content: space-between;
   align-items: center;
+  background-color: #8ff11f;
 }
+
 .text {
   width: 100%;
   font-size: 20px;
@@ -589,6 +596,13 @@ body {
 
 @media (max-width: 768px) {
   /* Apply these styles only when the viewport width is 768px or less (tablet and smaller screens) */
+
+  .homepage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .card {
     flex: 1 1 calc(50% - 20px); /* 
       flex-grow: 1   -> Allows the card to grow and take up available space equally with others.
