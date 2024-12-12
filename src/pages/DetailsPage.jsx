@@ -73,14 +73,17 @@ function DetailsPage({animals, setAnimals}) {
       }
   }
   return (
-    <div>
+     <div className="details-page">
       <h1>{animal.name}</h1>
+      <div className="details-container">
+      <div className="image-container">
       {/* Display the large version of the selected image */}
       {selectedImage && (
         <img
           src={selectedImage}
           alt={`${animal.name} large view`}
           style={{ height: "500px" }}
+          className="animal-image"
         />
       )}
       <div className="thumbnails">
@@ -95,6 +98,8 @@ function DetailsPage({animals, setAnimals}) {
           />
         ))}
       </div>
+      </div>
+      <div className="details">
       {!isEditing ? (
         <>
       <p>
@@ -109,10 +114,10 @@ function DetailsPage({animals, setAnimals}) {
       <p>
         <strong>Sterilized:</strong> {animal.sterilisation ? "Yes" : "No"}
       </p>
-      <p>{animal.description}</p>
       <p>
         <strong>Location:</strong> {animal.location}
           </p>
+          <p>{animal.description}</p>
 
       </>
       ) : (
@@ -193,6 +198,8 @@ function DetailsPage({animals, setAnimals}) {
     </button>
     </>
       )}
+      </div>
+      </div>
 
       {/* Modal Logic */}
       {isModalOpen && (
@@ -212,15 +219,5 @@ function DetailsPage({animals, setAnimals}) {
 
 export default DetailsPage;
 
-{
-  /* Button to navigate back to the homepage 
-      <Link to="/submitForm">
-        <button className="details-btn">
-          Adopt Me<h1>🦝</h1>
-        </button>
-      </Link>
-    </div>
-  );
-}
-*/
-}
+
+

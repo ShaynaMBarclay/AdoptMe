@@ -197,40 +197,36 @@ body {
 
 /*Details Page*/
 
-.details-btn {
-  display: center;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  cursor: pointer;
-  border-radius: 15px;
-  color: white;
-  padding: 1px 40px;
-  font-size: 16px;
-  background-color: rgb(1, 102, 1);
-  background-color: #033106;
-}
-
-.details-btn:hover {
-  color: #fffb00;
-}
-
-/* Images on details page */
-
-.gallery {
+.details-page {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 20px;
 }
 
-.selected-image {
-  margin-bottom: 20px;
+.details-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1200px;
 }
 
-.large-image {
-  width: 80%; /* Dynamically sized to fit the layout */
-  max-width: 400px; /* Maximum limit for the large image */
+.image-container {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.animal-image {
+  width: 100%;
+  max-width: 500px;
   height: auto;
+}
+
+.details {
+  flex: 1;
+  max-width: 600px;
+  text-align: left;
 }
 
 .thumbnails {
@@ -244,15 +240,61 @@ body {
   width: 80px;
   height: auto;
   transition: transform 0.2s;
-  border: 2px solid transparent; /* Default state */
+  border: 2px solid transparent;
 }
 
+
 .thumbnail.active {
-  border: 2px solid rgb(5, 142, 32); /* Indicate active thumbnail */
+  border: 2px solid rgb(5, 142, 32);
 }
 
 .thumbnail:hover {
   transform: scale(1.1);
+}
+
+
+
+/* Button Styles */
+.details-btn {
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 15px;
+  color: white;
+  padding: 1px 40px;
+  font-size: 16px;
+  background-color: #033106;
+}
+
+.details-btn, button {
+  display: block; 
+  width: 100%;
+  max-width: 200px; 
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.details-btn:hover {
+  color: #fffb00;
+}
+
+button {
+  margin-top: 10px;
+}
+.details p strong {
+  font-weight: bold;
+  font-size: 19px;
+  color: #000000; 
+}
+
+.details p {
+  font-size: 25px;  
+  line-height: 1.2;  
+  margin-bottom: 12px;  
+  color: #434242; 
 }
 
 /*Submit Form*/
@@ -620,3 +662,20 @@ body {
     align-items: center;
   }
 }
+
+@media (max-width: 768px) {
+  .details-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .image-container {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .details {
+    text-align: center;
+  }
+}
+
