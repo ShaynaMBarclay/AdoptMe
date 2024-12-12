@@ -6,6 +6,7 @@ import config from "../components/chatbot/config.jsx";
 import MessageParser from "../components/chatbot/MessageParser.jsx";
 import ActionProvider from "../components/chatbot/ActionProvider.jsx";
 
+
 const HomePage = ({ animals }) => {
   // State to hold filtered data
   const [filteredAnimals, setFilteredAnimals] = useState(animals);
@@ -71,15 +72,9 @@ const HomePage = ({ animals }) => {
           />
         </div>
       )}
-
       <div className="homepage">
         {/* Include the Filter component */}
-        <div className="homepage-filters">
-          <Filter originalData={animals} setData={setFilteredAnimals} />
-        </div>
-
-        {/* Title */}
-        <h1 className="navbar-title">AdoptMe</h1>
+        <Filter originalData={animals} setData={setFilteredAnimals} />
 
         {/* Animal cards display */}
         <div className="card-container">
@@ -93,3 +88,11 @@ const HomePage = ({ animals }) => {
 };
 
 export default HomePage;
+
+// const location = useLocation(); // To capture navigation state
+
+// useEffect(() => {
+//   if (location.state?.refresh) {
+//     fetchAnimals();
+//   }
+// }, [location.state]);
