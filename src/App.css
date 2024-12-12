@@ -457,13 +457,25 @@ body {
 
 .footer {
   align-self: flex-end;
-  /* bottom: 0;
-  left: 0; */
   width: 100%;
-  background-color: #507231;
-  color: white;
+  background-color: rgb(255, 211, 130);
+  color: rgb(0, 0, 0);
   text-align: center;
-  padding: 15px 0;
+  padding: 30px 0;
+}
+
+.footer-link {
+  color: #000000;
+  text-decoration: none;
+  padding: 20px;
+}
+
+.footer-link:hover {
+  color: #025717;
+}
+
+.footer div {
+  margin-bottom: 30px;
 }
 
 /*NotFoundPage */
