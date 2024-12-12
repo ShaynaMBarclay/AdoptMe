@@ -71,15 +71,23 @@ const HomePage = ({ animals }) => {
           />
         </div>
       )}
+
       <div className="homepage">
         {/* Include the Filter component */}
         <div className="homepage-filters">
           <Filter originalData={animals} setData={setFilteredAnimals} />
         </div>
+        <div className="homepage-filters">
+          <Filter originalData={animals} setData={setFilteredAnimals} />
+        </div>
+
+        {/* Title */}
+        <h1 className="navbar-title">AdoptMe</h1>
+
         {/* Animal cards display */}
         <div>
-          <h1 className="navbar-title">AdoptMe</h1>
           <div className="card-container">
+            <h1 className="navbar-title">AdoptMe</h1>
             {filteredAnimals.map((animal) => (
               <Card key={animal.id} animal={animal} />
             ))}
@@ -91,11 +99,3 @@ const HomePage = ({ animals }) => {
 };
 
 export default HomePage;
-
-// const location = useLocation(); // To capture navigation state
-
-// useEffect(() => {
-//   if (location.state?.refresh) {
-//     fetchAnimals();
-//   }
-// }, [location.state]);

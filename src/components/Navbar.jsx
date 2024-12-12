@@ -28,7 +28,10 @@ const Navbar = () => {
         <Link to="/">
           <img src={imgSrc} alt="AdoptMe Logo" className="logo" />
         </Link>
+<<<<<<< HEAD
         {/* <h1 className="navbar-title">AdoptMe</h1> */}
+=======
+>>>>>>> a302a2b176ce3ca6b5ffd586b55c44168c184b50
       </div>
 
       <div className="navbar-links">
