@@ -243,7 +243,6 @@ body {
   border: 2px solid transparent;
 }
 
-
 .thumbnail.active {
   border: 2px solid rgb(5, 142, 32);
 }
@@ -251,8 +250,6 @@ body {
 .thumbnail:hover {
   transform: scale(1.1);
 }
-
-
 
 /* Button Styles */
 .details-btn {
@@ -266,10 +263,11 @@ body {
   background-color: #033106;
 }
 
-.details-btn, button {
-  display: block; 
+.details-btn,
+button {
+  display: block;
   width: 100%;
-  max-width: 200px; 
+  max-width: 200px;
   font-size: 16px;
   cursor: pointer;
   border: none;
@@ -287,14 +285,14 @@ button {
 .details p strong {
   font-weight: bold;
   font-size: 19px;
-  color: #000000; 
+  color: #000000;
 }
 
 .details p {
-  font-size: 25px;  
-  line-height: 1.2;  
-  margin-bottom: 12px;  
-  color: #434242; 
+  font-size: 25px;
+  line-height: 1.2;
+  margin-bottom: 12px;
+  color: #434242;
 }
 
 /*Submit Form*/
@@ -510,6 +508,7 @@ button {
   color: #000000;
   text-decoration: none;
   padding: 20px;
+  font-size: 25px;
 }
 
 .footer-link:hover {
@@ -631,6 +630,32 @@ button {
   font-size: 20px;
 }
 
+.contact {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  color: #010c04;
+  margin-right: 60px;
+  margin-top: 10px;
+  margin-left: 60px;
+}
+
+.left-side {
+  flex: 1;
+  text-align: left;
+}
+
+.right-side {
+  flex: 1;
+  text-align: right;
+  margin-bottom: 20px;
+  margin-top: 0px;
+}
+
+.right-side p {
+  margin-bottom: 100px;
+}
+
 /* mobile version */
 
 @media (max-width: 768px) {
@@ -678,4 +703,3 @@ button {
     text-align: center;
   }
 }
-

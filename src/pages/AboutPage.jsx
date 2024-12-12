@@ -63,20 +63,24 @@ const AboutPage = () => {
       </div>
       <h1>Thanks for helping🙏</h1>
 
-      <h2>CONTACT US</h2>
-      <p>
-        🖃 AdoptMe@FakeEmail.com
-        <br />
-        🕻 00000000 <br />
-        Ask the chatbot on the Home Page! <br />
-      </p>
-
-      <h2>People who create the web page for this project:</h2>
-      <br />
-
-      <p>KATYA SALATA</p>
-      <p>SHAYNA BARCLAY</p>
-      <p>ANNA TUREK</p>
+      <div className="contact">
+        <div className="left-side">
+          <h2>CONTACT US</h2>
+          <p>
+            🖃 AdoptMe@FakeEmail.com
+            <br />
+            🕻 00000000 <br />
+            Ask the chatbot on the Home Page! <br />
+          </p>
+          <div className="right-side">
+            <h3>TECHNICAL STAFF</h3>
+            <br />
+            <p1>KATYA SALATA</p1> <br />
+            <p2>SHAYNA BARCLAY</p2> <br />
+            <p3>ANNA TUREK</p3> <br />
+          </div>
+        </div>
+      </div>
     </>
   );
 };
