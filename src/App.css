@@ -22,7 +22,7 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 10px 20px;
-  background-color: rgb(255, 211, 130);
+  background-color: #ffd382;
   height: 90px;
   top: 0;
   z-index: 9999;
@@ -252,9 +252,6 @@ body {
   transform: scale(1.1);
 }
 
-
-
-/* Button Styles */
 .details-btn {
   display: inline-block;
   text-align: center;
@@ -274,16 +271,33 @@ body {
   cursor: pointer;
   border: none;
   border-radius: 5px;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .details-btn:hover {
-  color: #fffb00;
+  background-color: #ffd382;
+  color: white;
 }
 
 button {
   margin-top: 10px;
 }
+
+.edit-btn {
+  background-color: #2c8204; 
+  color: white; 
+  padding: 10px 20px; 
+  font-size: 16px; 
+  border: none; 
+  border-radius: 5px; 
+  cursor: pointer; 
+  transition: background-color 0.3s ease; 
+}
+
+.edit-btn:hover {
+  background-color: #ffd382; 
+}
+
 .details p strong {
   font-weight: bold;
   font-size: 19px;

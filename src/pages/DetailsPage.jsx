@@ -189,7 +189,7 @@ function DetailsPage({animals, setAnimals}) {
       </button>
 
       {!isEditing ? (
-          <button onClick={handleEdit}>Edit</button>
+          <button className="edit-btn" onClick={handleEdit}>Edit</button>
       ) : (
         <>
         <button onClick={handleSave}>Save</button>
