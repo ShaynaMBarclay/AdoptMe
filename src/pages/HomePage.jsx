@@ -71,9 +71,15 @@ const HomePage = ({ animals }) => {
           />
         </div>
       )}
+
       <div className="homepage">
         {/* Include the Filter component */}
-        <Filter originalData={animals} setData={setFilteredAnimals} />
+        <div className="homepage-filters">
+          <Filter originalData={animals} setData={setFilteredAnimals} />
+        </div>
+
+        {/* Title */}
+        <h1 className="navbar-title">AdoptMe</h1>
 
         {/* Animal cards display */}
         <div className="card-container">
@@ -87,11 +93,3 @@ const HomePage = ({ animals }) => {
 };
 
 export default HomePage;
-
-// const location = useLocation(); // To capture navigation state
-
-// useEffect(() => {
-//   if (location.state?.refresh) {
-//     fetchAnimals();
-//   }
-// }, [location.state]);
