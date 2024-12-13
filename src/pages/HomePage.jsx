@@ -47,23 +47,6 @@ const HomePage = ({ animals }) => {
             backgroundColor: "#fff",
           }}
         >
-          {/* Close Button and some css */}
-          <button
-            onClick={() => setShowChatbot(false)}
-            style={{
-              position: "absolute",
-              top: "10px",
-              right: "10px",
-              background: "transparent",
-              border: "none",
-              fontSize: "16px",
-              fontWeight: "bold",
-              cursor: "pointer",
-              zIndex: 1001,
-            }}
-          >
-            ✕
-          </button>
 
           <Chatbot
             config={config}
