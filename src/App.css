@@ -6,13 +6,13 @@
 
 main {
   color: #000000;
-  background-color: rgba(255, 229, 182, 0.884);
+  background-color: rgba(255, 229, 182, 0.603);
   display: flex;
   flex-direction: column;
 }
 
 body {
-  background-image: url("https://t3.ftcdn.net/jpg/02/61/37/08/360_F_261370893_3FXrdROYSFQqUkCQWq2z7CdyTauzaGmT.jpg");
+  background-image: url("https://res.cloudinary.com/dmvawq2ak/image/upload/v1734052000/Tapeten-Musterartikel-102284-63204774_1_svuelr.jpg");
   font-size: 20px;
 }
 
@@ -454,28 +454,33 @@ body {
 }
 
 /*Footer */
-
 .footer {
-  align-self: flex-end;
-  width: 100%;
   background-color: rgb(255, 211, 130);
+  padding: 0 40px 20px 40px;
+}
+
+.footer-box {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  align-items: center;
   color: rgb(0, 0, 0);
   text-align: center;
-  padding: 30px 0;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
 }
 
 .footer-link {
   color: #000000;
   text-decoration: none;
-  padding: 20px;
+  padding: 10px;
 }
 
 .footer-link:hover {
   color: #025717;
-}
-
-.footer div {
-  margin-bottom: 30px;
 }
 
 /*NotFoundPage */
@@ -496,103 +501,91 @@ body {
 
 /*About Page */
 
-.p1 {
+.about-wrapper {
+  padding: 0 60px;
+}
+
+.about-box {
+  display: flex;
+  justify-content: space-around;
+  border-radius: 5px;
+  margin-bottom: 30px;
+}
+
+.about-box-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-box img {
+  height: 420px;
+  border-radius: 5px;
+}
+
+.about-text {
+  font-size: 24px;
+  text-align: left;
+  padding: 0 10px;
+  margin: auto 0;
+}
+
+.about-link {
+  color: #000000;
+  text-decoration: none;
+}
+
+.about-devs {
+  padding: 80px 0px 30px 0px;
+}
+
+.dev-card-box {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  color: #025717;
-  margin-left: 120px;
-}
-.p1 img {
-  height: 400px;
-  margin-right: 60px;
+  padding-top: 20px;
 }
 
-.p1 p {
-  width: 40%;
-  margin-bottom: 100px;
-  font-size: 30px;
-  margin-right: 90px;
+.dev-card {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
 }
 
-.text {
+.dev-photo {
   width: 100%;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
-.about {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 30px;
-  color: #025717;
-  justify-content: space-between;
-}
-.about img {
-  height: 500px;
-  margin-right: 60px;
-}
-.about p {
-  margin-bottom: 100px;
-  width: 50%;
-  font-size: 25px;
-  margin-left: 30px;
+.dev-card-linkedin {
+  width: 100px;
+  padding: 10px;
 }
 
-.text {
-  width: 100%;
-  font-size: 20px;
+.dev-card-linkedin:hover {
+  width: 100px;
+  padding: 10px;
+  background-color: white;
 }
 
-.mission {
-  margin-top: 30px;
-  display: flex;
-  align-items: center;
-  color: #025717;
-  justify-content: space-between;
-}
-.mission img {
-  height: 600px;
-  margin-left: 120px;
+.dev-card-github {
+  padding: 10px;
+  width: 50px;
 }
 
-.mission p {
-  width: 40%;
-  margin-bottom: 100px;
-  font-size: 30px;
-  margin-right: 60px;
-}
-
-.mission text {
-  width: 150%;
-}
-
-.goal {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 30px;
-  color: #025717;
-}
-.goal img {
-  height: 600px;
-  margin-right: 90px;
-}
-.goal p {
-  margin-bottom: 100px;
-  width: 50%;
-  font-size: 40px;
-  margin-left: 30px;
-}
-
-.text {
-  width: 100%;
-  font-size: 20px;
+.dev-card-github:hover {
+  background-color: white;
 }
 
 /* mobile version */
 
 @media (max-width: 768px) {
-  /* Apply these styles only when the viewport width is 768px or less (tablet and smaller screens) */
+  /*tablet and smaller screens*/
+  .homepage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .card {
     flex: 1 1 calc(50% - 20px); /* 
       flex-grow: 1   -> Allows the card to grow and take up available space equally with others.
@@ -601,7 +594,27 @@ body {
     */
     max-width: calc(
       50% - 20px
-    ); /* Ensures the card's maximum width is also 50% of the container minus 20px. */
+    ); /*card's maximum width is 50% of the container minus 20px. */
+  }
+
+  .about-box {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .about-wrapper {
+    padding: 0 10px;
+  }
+
+  .dev-card-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .dev-card {
+    width: 70%;
   }
 }
 
@@ -610,13 +623,9 @@ body {
     flex: 1 1 100%; /* 1 card per row on smaller screens */
     max-width: 100%;
   }
-}
 
-@media (max-width: 768px) {
-  /* Apply these styles only when the viewport width is 768px or less (tablet and smaller screens) */
-  .homepage {
+  .footer-box {
     display: flex;
     flex-direction: column;
-    align-items: center;
   }
 }
