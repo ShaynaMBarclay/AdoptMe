@@ -21,6 +21,9 @@ const MessageParser = ({ children, actions }) => {
       lowerCaseMessage.includes('are your animals vaccinated')
     ) {
       actions.handleSterilisationVaccinationQuery(); // Call the new action
+    } else {
+      // Fallback response for unrecognized messages
+      actions.handleFallback();
     }
   };
 

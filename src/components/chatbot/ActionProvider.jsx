@@ -43,6 +43,39 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
     }));
   };
 
+  // List of valid questions
+  const validQuestions = [
+    "What is AdoptMe about?",
+    "Tell me about AdoptMe.",
+    "How can I adopt an animal through your website?",
+    "How can I adopt?",
+    "Are your animals sterilised or vaccinated?",
+    "Are your animals sterilised?",
+    "Are your animals vaccinated?"
+  ];
+
+  // Add the handleFallback function to respond to unrecognized queries
+  const handleFallback = () => {
+    const fallbackMessage = createChatBotMessage(
+      "I do not know the answer to this response. Please refer to these questions:"
+    );
+
+    // Send fallback message first
+    setState((prev) => ({
+      ...prev,
+      messages: [...prev.messages, fallbackMessage],
+    }));
+
+    // Then send each question as a separate message
+    validQuestions.forEach((question) => {
+      const questionMessage = createChatBotMessage(`- ${question}`);
+      setState((prev) => ({
+        ...prev,
+        messages: [...prev.messages, questionMessage],
+      }));
+    });
+  };
+
   return (
     <div>
       {React.Children.map(children, (child) => {
@@ -51,7 +84,8 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
             handleHello,
             handleAboutPage,
             handleAdoptQuery,
-            handleSterilisationVaccinationQuery, // Add the new action
+            handleSterilisationVaccinationQuery,
+            handleFallback, // Add the fallback action here
           },
         });
       })}
