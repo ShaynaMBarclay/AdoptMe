@@ -243,7 +243,6 @@ body {
   border: 2px solid transparent;
 }
 
-
 .thumbnail.active {
   border: 2px solid rgb(5, 142, 32);
 }
@@ -263,10 +262,11 @@ body {
   background-color: #033106;
 }
 
-.details-btn, button {
-  display: block; 
+.details-btn,
+button {
+  display: block;
   width: 100%;
-  max-width: 200px; 
+  max-width: 200px;
   font-size: 16px;
   cursor: pointer;
   border: none;
@@ -284,31 +284,31 @@ button {
 }
 
 .edit-btn {
-  background-color: #2c8204; 
-  color: white; 
-  padding: 10px 20px; 
-  font-size: 16px; 
-  border: none; 
-  border-radius: 5px; 
-  cursor: pointer; 
-  transition: background-color 0.3s ease; 
+  background-color: #2c8204;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .edit-btn:hover {
-  background-color: #ffd382; 
+  background-color: #ffd382;
 }
 
 .details p strong {
   font-weight: bold;
   font-size: 19px;
-  color: #000000; 
+  color: #000000;
 }
 
 .details p {
-  font-size: 25px;  
-  line-height: 1.2;  
-  margin-bottom: 12px;  
-  color: #434242; 
+  font-size: 25px;
+  line-height: 1.2;
+  margin-bottom: 12px;
+  color: #434242;
 }
 
 /*Submit Form*/
@@ -700,5 +700,16 @@ button {
   .details {
     text-align: center;
   }
-}
 
+  .homepage {
+    display: flex;
+    gap: 0;
+  }
+
+  .homepage-filters {
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+    margin: -30px auto;
+  }
+}
